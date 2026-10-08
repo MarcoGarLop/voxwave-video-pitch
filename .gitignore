@@ -1,0 +1,11 @@
+node_modules/
+out/
+.DS_Store
+*.blend1
+
+# Blender output: regenerate with `blender -b --python blender/render_shots.py -- <shot>`
+public/device/turntable/frame_*.png
+public/device/closeup/frame_*.png
+public/device/*/test_*.png
+blender/device.blend
+__pycache__/

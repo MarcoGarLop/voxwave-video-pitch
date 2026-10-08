@@ -1,0 +1,597 @@
+{
+  "s01": {
+    "text": "That's why we built VoxWave.",
+    "words": [
+      {
+        "word": "That's",
+        "start": 0.104166,
+        "end": 0.208332
+      },
+      {
+        "word": "why",
+        "start": 0.208333,
+        "end": 0.312499
+      },
+      {
+        "word": "we",
+        "start": 0.3125,
+        "end": 0.45575
+      },
+      {
+        "word": "built",
+        "start": 0.46875,
+        "end": 0.755208
+      },
+      {
+        "word": "VoxWave",
+        "start": 0.755208,
+        "end": 1.536458
+      }
+    ]
+  },
+  "s02": {
+    "text": "No clinic visits. No new apps. Just call the people you love. We care while you talk.",
+    "words": [
+      {
+        "word": "No",
+        "start": 0.091166,
+        "end": 0.273457
+      },
+      {
+        "word": "clinic",
+        "start": 0.273458,
+        "end": 0.611999
+      },
+      {
+        "word": "visits",
+        "start": 0.612,
+        "end": 1.250041
+      },
+      {
+        "word": "No",
+        "start": 1.679708,
+        "end": 1.822916
+      },
+      {
+        "word": "new",
+        "start": 1.822916,
+        "end": 2.044291
+      },
+      {
+        "word": "apps",
+        "start": 2.057291,
+        "end": 2.591166
+      },
+      {
+        "word": "Just",
+        "start": 3.020833,
+        "end": 3.138041
+      },
+      {
+        "word": "call",
+        "start": 3.138041,
+        "end": 3.281249
+      },
+      {
+        "word": "the",
+        "start": 3.28125,
+        "end": 3.346375
+      },
+      {
+        "word": "people",
+        "start": 3.346375,
+        "end": 3.606791
+      },
+      {
+        "word": "you",
+        "start": 3.606791,
+        "end": 3.736999
+      },
+      {
+        "word": "love",
+        "start": 3.75,
+        "end": 4.231791
+      },
+      {
+        "word": "We",
+        "start": 4.661458,
+        "end": 4.765624
+      },
+      {
+        "word": "care",
+        "start": 4.778666,
+        "end": 5.013041
+      },
+      {
+        "word": "while",
+        "start": 5.013041,
+        "end": 5.117207
+      },
+      {
+        "word": "you",
+        "start": 5.117208,
+        "end": 5.221374
+      },
+      {
+        "word": "talk",
+        "start": 5.221375,
+        "end": 5.664083
+      }
+    ]
+  },
+  "s03": {
+    "text": "Our AI hears what the human ear can't: tremor, pitch, rhythm and pauses.",
+    "words": [
+      {
+        "word": "Our",
+        "start": 0.104166,
+        "end": 0.299499
+      },
+      {
+        "word": "AI",
+        "start": 0.3125,
+        "end": 0.872416
+      },
+      {
+        "word": "hears",
+        "start": 0.872416,
+        "end": 1.276041
+      },
+      {
+        "word": "what",
+        "start": 1.276041,
+        "end": 1.380207
+      },
+      {
+        "word": "the",
+        "start": 1.380208,
+        "end": 1.432291
+      },
+      {
+        "word": "human",
+        "start": 1.445333,
+        "end": 1.757833
+      },
+      {
+        "word": "ear",
+        "start": 1.770833,
+        "end": 1.992208
+      },
+      {
+        "word": "can't",
+        "start": 1.992208,
+        "end": 2.408874
+      },
+      {
+        "word": "tremor",
+        "start": 2.838541,
+        "end": 3.346374
+      },
+      {
+        "word": "pitch",
+        "start": 3.58075,
+        "end": 4.062541
+      },
+      {
+        "word": "rhythm",
+        "start": 4.322916,
+        "end": 4.804707
+      },
+      {
+        "word": "and",
+        "start": 4.973958,
+        "end": 5.039083
+      },
+      {
+        "word": "pauses",
+        "start": 5.052083,
+        "end": 5.742208
+      }
+    ]
+  },
+  "s04": {
+    "text": "Week after week, it learns each patient's own baseline, and flags the moment their voice starts to drift.",
+    "words": [
+      {
+        "word": "Week",
+        "start": 0.104166,
+        "end": 0.390624
+      },
+      {
+        "word": "after",
+        "start": 0.403666,
+        "end": 0.729166
+      },
+      {
+        "word": "week",
+        "start": 0.729166,
+        "end": 1.119791
+      },
+      {
+        "word": "it",
+        "start": 1.367208,
+        "end": 1.510416
+      },
+      {
+        "word": "learns",
+        "start": 1.510416,
+        "end": 1.874999
+      },
+      {
+        "word": "each",
+        "start": 2.044291,
+        "end": 2.239582
+      },
+      {
+        "word": "patient's",
+        "start": 2.239583,
+        "end": 2.786458
+      },
+      {
+        "word": "own",
+        "start": 2.838541,
+        "end": 3.085957
+      },
+      {
+        "word": "baseline",
+        "start": 3.098958,
+        "end": 3.815124
+      },
+      {
+        "word": "and",
+        "start": 4.192708,
+        "end": 4.257833
+      },
+      {
+        "word": "flags",
+        "start": 4.257833,
+        "end": 4.648458
+      },
+      {
+        "word": "the",
+        "start": 4.648458,
+        "end": 4.726583
+      },
+      {
+        "word": "moment",
+        "start": 4.726583,
+        "end": 5.091166
+      },
+      {
+        "word": "their",
+        "start": 5.091166,
+        "end": 5.247416
+      },
+      {
+        "word": "voice",
+        "start": 5.260416,
+        "end": 5.820332
+      },
+      {
+        "word": "starts",
+        "start": 5.989583,
+        "end": 6.302083
+      },
+      {
+        "word": "to",
+        "start": 6.315125,
+        "end": 6.380208
+      },
+      {
+        "word": "drift",
+        "start": 6.380208,
+        "end": 6.901041
+      }
+    ]
+  },
+  "s05": {
+    "text": "We don't diagnose. We fill the three-to-six-month gap with data between visits.",
+    "words": [
+      {
+        "word": "We",
+        "start": 0.104166,
+        "end": 0.169291
+      },
+      {
+        "word": "don't",
+        "start": 0.169291,
+        "end": 0.325541
+      },
+      {
+        "word": "diagnose",
+        "start": 0.325541,
+        "end": 1.158874
+      },
+      {
+        "word": "We",
+        "start": 1.588541,
+        "end": 1.692707
+      },
+      {
+        "word": "fill",
+        "start": 1.692708,
+        "end": 1.927083
+      },
+      {
+        "word": "the",
+        "start": 1.927083,
+        "end": 2.044291
+      },
+      {
+        "word": "three-to-six-month",
+        "start": 2.044291,
+        "end": 3.177082
+      },
+      {
+        "word": "gap",
+        "start": 3.177083,
+        "end": 3.489583
+      },
+      {
+        "word": "with",
+        "start": 3.489583,
+        "end": 3.684916
+      },
+      {
+        "word": "data",
+        "start": 3.697916,
+        "end": 4.062499
+      },
+      {
+        "word": "between",
+        "start": 4.179708,
+        "end": 4.583333
+      },
+      {
+        "word": "visits",
+        "start": 4.583333,
+        "end": 5.195333
+      }
+    ]
+  },
+  "s06": {
+    "text": "And we designed it for those who need it most: rural areas, and people living alone.",
+    "words": [
+      {
+        "word": "And",
+        "start": 0.104166,
+        "end": 0.182291
+      },
+      {
+        "word": "we",
+        "start": 0.182291,
+        "end": 0.260416
+      },
+      {
+        "word": "designed",
+        "start": 0.260416,
+        "end": 0.664082
+      },
+      {
+        "word": "it",
+        "start": 0.677083,
+        "end": 0.742208
+      },
+      {
+        "word": "for",
+        "start": 0.742208,
+        "end": 0.859374
+      },
+      {
+        "word": "those",
+        "start": 0.859375,
+        "end": 1.119791
+      },
+      {
+        "word": "who",
+        "start": 1.119791,
+        "end": 1.197916
+      },
+      {
+        "word": "need",
+        "start": 1.197916,
+        "end": 1.432291
+      },
+      {
+        "word": "it",
+        "start": 1.432291,
+        "end": 1.523457
+      },
+      {
+        "word": "most",
+        "start": 1.523458,
+        "end": 2.200541
+      },
+      {
+        "word": "rural",
+        "start": 2.8125,
+        "end": 3.255208
+      },
+      {
+        "word": "areas",
+        "start": 3.320333,
+        "end": 3.828166
+      },
+      {
+        "word": "and",
+        "start": 3.841166,
+        "end": 4.049499
+      },
+      {
+        "word": "people",
+        "start": 4.21875,
+        "end": 4.583333
+      },
+      {
+        "word": "living",
+        "start": 4.583333,
+        "end": 4.817708
+      },
+      {
+        "word": "alone",
+        "start": 4.83075,
+        "end": 5.247416
+      }
+    ]
+  },
+  "s07": {
+    "text": "One button. Works offline. And if something changes, it tells them to call their specialist.",
+    "words": [
+      {
+        "word": "One",
+        "start": 0.104166,
+        "end": 0.273457
+      },
+      {
+        "word": "button",
+        "start": 0.273458,
+        "end": 0.651083
+      },
+      {
+        "word": "Works",
+        "start": 1.08075,
+        "end": 1.263041
+      },
+      {
+        "word": "offline",
+        "start": 1.263041,
+        "end": 1.809916
+      },
+      {
+        "word": "And",
+        "start": 2.226583,
+        "end": 2.291666
+      },
+      {
+        "word": "if",
+        "start": 2.291666,
+        "end": 2.369791
+      },
+      {
+        "word": "something",
+        "start": 2.369791,
+        "end": 2.721374
+      },
+      {
+        "word": "changes",
+        "start": 2.721375,
+        "end": 3.450541
+      },
+      {
+        "word": "it",
+        "start": 3.841166,
+        "end": 3.919291
+      },
+      {
+        "word": "tells",
+        "start": 3.932291,
+        "end": 4.231791
+      },
+      {
+        "word": "them",
+        "start": 4.231791,
+        "end": 4.375041
+      },
+      {
+        "word": "to",
+        "start": 4.388041,
+        "end": 4.453166
+      },
+      {
+        "word": "call",
+        "start": 4.466166,
+        "end": 4.752624
+      },
+      {
+        "word": "their",
+        "start": 4.752625,
+        "end": 4.869791
+      },
+      {
+        "word": "specialist",
+        "start": 4.869791,
+        "end": 5.690124
+      }
+    ]
+  },
+  "s08": {
+    "text": "And this is just the beginning: our MVP will be live at the Final Weekend.",
+    "words": [
+      {
+        "word": "And",
+        "start": 0.104166,
+        "end": 0.247416
+      },
+      {
+        "word": "this",
+        "start": 0.807291,
+        "end": 0.989582
+      },
+      {
+        "word": "is",
+        "start": 0.989583,
+        "end": 1.145833
+      },
+      {
+        "word": "just",
+        "start": 1.158875,
+        "end": 1.458333
+      },
+      {
+        "word": "the",
+        "start": 1.458333,
+        "end": 1.536458
+      },
+      {
+        "word": "beginning",
+        "start": 1.5495,
+        "end": 2.01825
+      },
+      {
+        "word": "our",
+        "start": 2.513041,
+        "end": 2.708374
+      },
+      {
+        "word": "MVP",
+        "start": 2.8125,
+        "end": 3.58075
+      },
+      {
+        "word": "will",
+        "start": 3.59375,
+        "end": 3.710958
+      },
+      {
+        "word": "be",
+        "start": 3.710958,
+        "end": 3.802083
+      },
+      {
+        "word": "live",
+        "start": 3.802083,
+        "end": 4.244791
+      },
+      {
+        "word": "at",
+        "start": 4.244791,
+        "end": 4.296874
+      },
+      {
+        "word": "the",
+        "start": 4.296875,
+        "end": 4.362
+      },
+      {
+        "word": "Final",
+        "start": 4.362,
+        "end": 4.739583
+      },
+      {
+        "word": "Weekend",
+        "start": 4.739583,
+        "end": 5.260416
+      }
+    ]
+  }
+}

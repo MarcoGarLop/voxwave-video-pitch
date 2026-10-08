@@ -1,0 +1,35 @@
+{
+  "name": "voxwave-video-pitch",
+  "version": "1.0.0",
+  "private": true,
+  "description": "VoxWave video pitch - Creative Shock 2026",
+  "scripts": {
+    "dev": "remotion studio",
+    "render": "remotion render",
+    "still": "remotion still",
+    "tts": "node scripts/tts.mjs",
+    "typecheck": "tsc --noEmit",
+    "sfx": "node scripts/sfx.mjs"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.534",
+    "@remotion/google-fonts": "4.0.534",
+    "@remotion/layout-utils": "4.0.534",
+    "@remotion/media": "4.0.534",
+    "@remotion/media-utils": "4.0.534",
+    "@remotion/motion-blur": "4.0.534",
+    "@remotion/noise": "4.0.534",
+    "@remotion/paths": "4.0.534",
+    "@remotion/shapes": "4.0.534",
+    "@remotion/transitions": "4.0.534",
+    "react": "19.2.0",
+    "react-dom": "19.2.0",
+    "remotion": "4.0.534"
+  },
+  "devDependencies": {
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "msedge-tts": "^2.0.9",
+    "typescript": "^7.0.2"
+  }
+}
