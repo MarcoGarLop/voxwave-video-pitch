@@ -1,286 +1,281 @@
 {
   "s01": {
-    "text": "That's why we built VoxWave.",
+    "text": "Meet VoxWave.",
     "words": [
       {
-        "word": "That's",
+        "word": "Meet",
         "start": 0.104166,
-        "end": 0.208332
-      },
-      {
-        "word": "why",
-        "start": 0.208333,
-        "end": 0.312499
-      },
-      {
-        "word": "we",
-        "start": 0.3125,
-        "end": 0.45575
-      },
-      {
-        "word": "built",
-        "start": 0.46875,
-        "end": 0.755208
+        "end": 0.325541
       },
       {
         "word": "VoxWave",
-        "start": 0.755208,
-        "end": 1.536458
+        "start": 0.338541,
+        "end": 1.067707
       }
     ]
   },
   "s02": {
-    "text": "No clinic visits. No new apps. Just call the people you love. We care while you talk.",
+    "text": "Every week, a three-minute voice session: hold an 'aah', read a line, chat a little. A small weekly habit, for your voice.",
     "words": [
       {
-        "word": "No",
+        "word": "Every",
         "start": 0.091166,
-        "end": 0.273457
+        "end": 0.351582
       },
       {
-        "word": "clinic",
-        "start": 0.273458,
-        "end": 0.611999
+        "word": "week",
+        "start": 0.351583,
+        "end": 0.664083
       },
       {
-        "word": "visits",
-        "start": 0.612,
-        "end": 1.250041
+        "word": "a",
+        "start": 0.729166,
+        "end": 0.781249
       },
       {
-        "word": "No",
-        "start": 1.679708,
-        "end": 1.822916
+        "word": "three-minute",
+        "start": 0.794291,
+        "end": 1.419291
       },
       {
-        "word": "new",
-        "start": 1.822916,
-        "end": 2.044291
+        "word": "voice",
+        "start": 1.419291,
+        "end": 1.731791
       },
       {
-        "word": "apps",
-        "start": 2.057291,
-        "end": 2.591166
+        "word": "session",
+        "start": 1.744791,
+        "end": 2.187499
       },
       {
-        "word": "Just",
-        "start": 3.020833,
-        "end": 3.138041
+        "word": "hold",
+        "start": 2.747416,
+        "end": 2.916666
       },
       {
-        "word": "call",
-        "start": 3.138041,
-        "end": 3.281249
+        "word": "an",
+        "start": 2.916666,
+        "end": 3.033874
       },
       {
-        "word": "the",
-        "start": 3.28125,
-        "end": 3.346375
+        "word": "aah",
+        "start": 3.046875,
+        "end": 3.450541
       },
       {
-        "word": "people",
-        "start": 3.346375,
-        "end": 3.606791
+        "word": "read",
+        "start": 3.789083,
+        "end": 3.971374
       },
       {
-        "word": "you",
-        "start": 3.606791,
-        "end": 3.736999
+        "word": "a",
+        "start": 3.971375,
+        "end": 4.023458
       },
       {
-        "word": "love",
-        "start": 3.75,
-        "end": 4.231791
+        "word": "line",
+        "start": 4.036458,
+        "end": 4.544291
       },
       {
-        "word": "We",
-        "start": 4.661458,
-        "end": 4.765624
+        "word": "chat",
+        "start": 4.84375,
+        "end": 5.065125
       },
       {
-        "word": "care",
-        "start": 4.778666,
-        "end": 5.013041
+        "word": "a",
+        "start": 5.065125,
+        "end": 5.104208
       },
       {
-        "word": "while",
-        "start": 5.013041,
-        "end": 5.117207
-      },
-      {
-        "word": "you",
+        "word": "little",
         "start": 5.117208,
-        "end": 5.221374
+        "end": 5.507833
       },
       {
-        "word": "talk",
-        "start": 5.221375,
-        "end": 5.664083
+        "word": "A",
+        "start": 5.911458,
+        "end": 5.963541
+      },
+      {
+        "word": "small",
+        "start": 5.963541,
+        "end": 6.419291
+      },
+      {
+        "word": "weekly",
+        "start": 6.419291,
+        "end": 6.835957
+      },
+      {
+        "word": "habit",
+        "start": 6.835958,
+        "end": 7.291708
+      },
+      {
+        "word": "for",
+        "start": 7.304708,
+        "end": 7.434916
+      },
+      {
+        "word": "your",
+        "start": 7.434916,
+        "end": 7.526082
+      },
+      {
+        "word": "voice",
+        "start": 7.539083,
+        "end": 8.190124
       }
     ]
   },
   "s03": {
-    "text": "Our AI hears what the human ear can't: tremor, pitch, rhythm and pauses.",
+    "text": "Our AI listens for what the ear can't: tremor, pitch, rhythm and pauses.",
     "words": [
       {
         "word": "Our",
         "start": 0.104166,
-        "end": 0.299499
+        "end": 0.286457
       },
       {
         "word": "AI",
-        "start": 0.3125,
-        "end": 0.872416
+        "start": 0.2995,
+        "end": 0.729166
       },
       {
-        "word": "hears",
-        "start": 0.872416,
-        "end": 1.276041
+        "word": "listens",
+        "start": 0.729166,
+        "end": 1.158874
+      },
+      {
+        "word": "for",
+        "start": 1.171875,
+        "end": 1.289083
       },
       {
         "word": "what",
-        "start": 1.276041,
-        "end": 1.380207
+        "start": 1.289083,
+        "end": 1.406249
       },
       {
         "word": "the",
-        "start": 1.380208,
-        "end": 1.432291
-      },
-      {
-        "word": "human",
-        "start": 1.445333,
-        "end": 1.757833
+        "start": 1.40625,
+        "end": 1.458333
       },
       {
         "word": "ear",
-        "start": 1.770833,
-        "end": 1.992208
+        "start": 1.458333,
+        "end": 1.718749
       },
       {
         "word": "can't",
-        "start": 1.992208,
-        "end": 2.408874
+        "start": 1.71875,
+        "end": 2.1745
       },
       {
         "word": "tremor",
-        "start": 2.838541,
-        "end": 3.346374
+        "start": 2.591166,
+        "end": 3.138041
       },
       {
         "word": "pitch",
-        "start": 3.58075,
-        "end": 4.062541
+        "start": 3.372416,
+        "end": 3.854207
       },
       {
         "word": "rhythm",
-        "start": 4.322916,
-        "end": 4.804707
+        "start": 4.114583,
+        "end": 4.635416
       },
       {
         "word": "and",
-        "start": 4.973958,
-        "end": 5.039083
+        "start": 4.817708,
+        "end": 4.895833
       },
       {
         "word": "pauses",
-        "start": 5.052083,
-        "end": 5.742208
+        "start": 4.895833,
+        "end": 5.585958
       }
     ]
   },
   "s04": {
-    "text": "Week after week, it learns each patient's own baseline, and flags the moment their voice starts to drift.",
+    "text": "It learns each patient's own baseline, and flags the moment their voice starts to drift.",
     "words": [
       {
-        "word": "Week",
-        "start": 0.104166,
-        "end": 0.390624
-      },
-      {
-        "word": "after",
-        "start": 0.403666,
-        "end": 0.729166
-      },
-      {
-        "word": "week",
-        "start": 0.729166,
-        "end": 1.119791
-      },
-      {
-        "word": "it",
-        "start": 1.367208,
-        "end": 1.510416
+        "word": "It",
+        "start": 0.091166,
+        "end": 0.221374
       },
       {
         "word": "learns",
-        "start": 1.510416,
-        "end": 1.874999
+        "start": 0.221375,
+        "end": 0.612
       },
       {
         "word": "each",
-        "start": 2.044291,
-        "end": 2.239582
+        "start": 0.78125,
+        "end": 0.976583
       },
       {
         "word": "patient's",
-        "start": 2.239583,
-        "end": 2.786458
+        "start": 0.989583,
+        "end": 1.549499
       },
       {
         "word": "own",
-        "start": 2.838541,
-        "end": 3.085957
+        "start": 1.614583,
+        "end": 1.848958
       },
       {
         "word": "baseline",
-        "start": 3.098958,
-        "end": 3.815124
+        "start": 1.848958,
+        "end": 2.630208
       },
       {
         "word": "and",
-        "start": 4.192708,
-        "end": 4.257833
+        "start": 2.903666,
+        "end": 2.994791
       },
       {
         "word": "flags",
-        "start": 4.257833,
-        "end": 4.648458
+        "start": 2.994791,
+        "end": 3.385416
       },
       {
         "word": "the",
-        "start": 4.648458,
-        "end": 4.726583
+        "start": 3.385416,
+        "end": 3.463541
       },
       {
         "word": "moment",
-        "start": 4.726583,
-        "end": 5.091166
+        "start": 3.463541,
+        "end": 3.854166
       },
       {
         "word": "their",
-        "start": 5.091166,
-        "end": 5.247416
+        "start": 3.867208,
+        "end": 4.036499
       },
       {
         "word": "voice",
-        "start": 5.260416,
-        "end": 5.820332
+        "start": 4.0495,
+        "end": 4.583375
       },
       {
         "word": "starts",
-        "start": 5.989583,
-        "end": 6.302083
+        "start": 4.713541,
+        "end": 5.039082
       },
       {
         "word": "to",
-        "start": 6.315125,
-        "end": 6.380208
+        "start": 5.039083,
+        "end": 5.104166
       },
       {
         "word": "drift",
-        "start": 6.380208,
-        "end": 6.901041
+        "start": 5.104166,
+        "end": 5.611999
       }
     ]
   },
@@ -350,247 +345,1632 @@
     ]
   },
   "s06": {
-    "text": "And we designed it for those who need it most: rural areas, and people living alone.",
+    "text": "Without a smartphone or internet? We thought of them too: a simple device, same session.",
     "words": [
       {
-        "word": "And",
-        "start": 0.104166,
-        "end": 0.182291
+        "word": "Without",
+        "start": 0.110291,
+        "end": 0.330874
       },
       {
-        "word": "we",
-        "start": 0.182291,
-        "end": 0.260416
+        "word": "a",
+        "start": 0.330875,
+        "end": 0.367625
       },
       {
-        "word": "designed",
-        "start": 0.260416,
-        "end": 0.664082
+        "word": "smartphone",
+        "start": 0.367666,
+        "end": 1.090707
       },
       {
-        "word": "it",
-        "start": 0.677083,
-        "end": 0.742208
+        "word": "or",
+        "start": 1.21325,
+        "end": 1.311291
       },
       {
-        "word": "for",
-        "start": 0.742208,
-        "end": 0.859374
+        "word": "internet",
+        "start": 1.311291,
+        "end": 1.801499
       },
       {
-        "word": "those",
-        "start": 0.859375,
-        "end": 1.119791
+        "word": "We",
+        "start": 2.205875,
+        "end": 2.303916
       },
       {
-        "word": "who",
-        "start": 1.119791,
-        "end": 1.197916
+        "word": "thought",
+        "start": 2.303916,
+        "end": 2.524499
       },
       {
-        "word": "need",
-        "start": 1.197916,
-        "end": 1.432291
+        "word": "of",
+        "start": 2.53675,
+        "end": 2.598041
       },
       {
-        "word": "it",
-        "start": 1.432291,
-        "end": 1.523457
+        "word": "them",
+        "start": 2.610291,
+        "end": 2.769624
       },
       {
-        "word": "most",
-        "start": 1.523458,
-        "end": 2.200541
+        "word": "too",
+        "start": 2.769625,
+        "end": 3.186291
       },
       {
-        "word": "rural",
-        "start": 2.8125,
-        "end": 3.255208
+        "word": "a",
+        "start": 3.627458,
+        "end": 3.700999
       },
       {
-        "word": "areas",
-        "start": 3.320333,
-        "end": 3.828166
+        "word": "simple",
+        "start": 3.71325,
+        "end": 4.056375
       },
       {
-        "word": "and",
-        "start": 3.841166,
-        "end": 4.049499
+        "word": "device",
+        "start": 4.056375,
+        "end": 4.656875
       },
       {
-        "word": "people",
-        "start": 4.21875,
-        "end": 4.583333
+        "word": "same",
+        "start": 4.791666,
+        "end": 5.061291
       },
       {
-        "word": "living",
-        "start": 4.583333,
-        "end": 4.817708
-      },
-      {
-        "word": "alone",
-        "start": 4.83075,
-        "end": 5.247416
+        "word": "session",
+        "start": 5.061291,
+        "end": 5.612749
       }
     ]
   },
   "s07": {
-    "text": "One button. Works offline. And if something changes, it tells them to call their specialist.",
+    "text": "One button. Works offline. If something changes, it tells them to call their specialist, and syncs at every checkup.",
     "words": [
       {
         "word": "One",
-        "start": 0.104166,
-        "end": 0.273457
+        "start": 0.097083,
+        "end": 0.254833
       },
       {
         "word": "button",
-        "start": 0.273458,
-        "end": 0.651083
+        "start": 0.267,
+        "end": 0.618958
       },
       {
         "word": "Works",
-        "start": 1.08075,
-        "end": 1.263041
+        "start": 1.007291,
+        "end": 1.201457
       },
       {
         "word": "offline",
-        "start": 1.263041,
-        "end": 1.809916
+        "start": 1.201458,
+        "end": 1.699041
       },
       {
-        "word": "And",
-        "start": 2.226583,
-        "end": 2.291666
-      },
-      {
-        "word": "if",
-        "start": 2.291666,
-        "end": 2.369791
+        "word": "If",
+        "start": 2.087375,
+        "end": 2.196583
       },
       {
         "word": "something",
-        "start": 2.369791,
-        "end": 2.721374
+        "start": 2.196583,
+        "end": 2.584916
       },
       {
         "word": "changes",
-        "start": 2.721375,
-        "end": 3.450541
+        "start": 2.584958,
+        "end": 3.264583
       },
       {
         "word": "it",
-        "start": 3.841166,
-        "end": 3.919291
+        "start": 3.45875,
+        "end": 3.555833
       },
       {
         "word": "tells",
-        "start": 3.932291,
-        "end": 4.231791
+        "start": 3.555833,
+        "end": 3.774291
       },
       {
         "word": "them",
-        "start": 4.231791,
-        "end": 4.375041
+        "start": 3.774291,
+        "end": 3.871374
       },
       {
         "word": "to",
-        "start": 4.388041,
-        "end": 4.453166
+        "start": 3.8835,
+        "end": 3.944166
       },
       {
         "word": "call",
-        "start": 4.466166,
-        "end": 4.752624
+        "start": 3.956291,
+        "end": 4.211166
       },
       {
         "word": "their",
-        "start": 4.752625,
-        "end": 4.869791
+        "start": 4.223291,
+        "end": 4.320374
       },
       {
         "word": "specialist",
-        "start": 4.869791,
-        "end": 5.690124
+        "start": 4.320375,
+        "end": 5.036375
+      },
+      {
+        "word": "and",
+        "start": 5.267,
+        "end": 5.4005
+      },
+      {
+        "word": "syncs",
+        "start": 5.412625,
+        "end": 5.813125
+      },
+      {
+        "word": "at",
+        "start": 5.82525,
+        "end": 5.910208
+      },
+      {
+        "word": "every",
+        "start": 6.031541,
+        "end": 6.213582
+      },
+      {
+        "word": "checkup",
+        "start": 6.213583,
+        "end": 6.759708
       }
     ]
   },
   "s08": {
-    "text": "And this is just the beginning: our MVP will be live at the Final Weekend.",
+    "text": "Next: our MVP, live at the Final Weekend.",
     "words": [
       {
-        "word": "And",
+        "word": "Next",
         "start": 0.104166,
-        "end": 0.247416
-      },
-      {
-        "word": "this",
-        "start": 0.807291,
-        "end": 0.989582
-      },
-      {
-        "word": "is",
-        "start": 0.989583,
-        "end": 1.145833
-      },
-      {
-        "word": "just",
-        "start": 1.158875,
-        "end": 1.458333
-      },
-      {
-        "word": "the",
-        "start": 1.458333,
-        "end": 1.536458
-      },
-      {
-        "word": "beginning",
-        "start": 1.5495,
-        "end": 2.01825
+        "end": 0.598957
       },
       {
         "word": "our",
-        "start": 2.513041,
-        "end": 2.708374
+        "start": 1.08075,
+        "end": 1.276083
       },
       {
         "word": "MVP",
-        "start": 2.8125,
-        "end": 3.58075
-      },
-      {
-        "word": "will",
-        "start": 3.59375,
-        "end": 3.710958
-      },
-      {
-        "word": "be",
-        "start": 3.710958,
-        "end": 3.802083
+        "start": 1.289083,
+        "end": 2.096374
       },
       {
         "word": "live",
-        "start": 3.802083,
-        "end": 4.244791
+        "start": 2.578125,
+        "end": 2.890625
       },
       {
         "word": "at",
-        "start": 4.244791,
-        "end": 4.296874
+        "start": 2.903666,
+        "end": 2.955749
       },
       {
         "word": "the",
-        "start": 4.296875,
-        "end": 4.362
+        "start": 2.95575,
+        "end": 3.007833
       },
       {
         "word": "Final",
-        "start": 4.362,
-        "end": 4.739583
+        "start": 3.007833,
+        "end": 3.346374
       },
       {
         "word": "Weekend",
+        "start": 3.346375,
+        "end": 3.828166
+      }
+    ]
+  },
+  "gap": {
+    "text": "Nearly ninety percent of people with Parkinson's see their speech change. Yet between visits, nobody is listening. Until now.",
+    "words": [
+      {
+        "word": "Nearly",
+        "start": 0.104166,
+        "end": 0.403666
+      },
+      {
+        "word": "ninety",
+        "start": 0.416666,
+        "end": 0.937499
+      },
+      {
+        "word": "percent",
+        "start": 0.9375,
+        "end": 1.354166
+      },
+      {
+        "word": "of",
+        "start": 1.354166,
+        "end": 1.432291
+      },
+      {
+        "word": "people",
+        "start": 1.445333,
+        "end": 1.783874
+      },
+      {
+        "word": "with",
+        "start": 1.783875,
+        "end": 1.901041
+      },
+      {
+        "word": "Parkinson's",
+        "start": 1.901041,
+        "end": 2.617207
+      },
+      {
+        "word": "see",
+        "start": 2.773458,
+        "end": 3.111999
+      },
+      {
+        "word": "their",
+        "start": 3.125,
+        "end": 3.307291
+      },
+      {
+        "word": "speech",
+        "start": 3.320333,
+        "end": 3.763041
+      },
+      {
+        "word": "change",
+        "start": 3.763041,
+        "end": 4.335957
+      },
+      {
+        "word": "Yet",
+        "start": 4.752625,
+        "end": 4.882833
+      },
+      {
+        "word": "between",
+        "start": 4.882833,
+        "end": 5.299499
+      },
+      {
+        "word": "visits",
+        "start": 5.2995,
+        "end": 6.028666
+      },
+      {
+        "word": "nobody",
+        "start": 6.25,
+        "end": 6.731791
+      },
+      {
+        "word": "is",
+        "start": 6.744791,
+        "end": 6.888041
+      },
+      {
+        "word": "listening",
+        "start": 6.888041,
+        "end": 7.473999
+      },
+      {
+        "word": "Until",
+        "start": 7.903666,
+        "end": 8.177082
+      },
+      {
+        "word": "now",
+        "start": 8.177083,
+        "end": 8.515624
+      }
+    ]
+  },
+  "report": {
+    "text": "Before each checkup, the neurologist gets one clear page.",
+    "words": [
+      {
+        "word": "Before",
+        "start": 0.117208,
+        "end": 0.520874
+      },
+      {
+        "word": "each",
+        "start": 0.533875,
+        "end": 0.690125
+      },
+      {
+        "word": "checkup",
+        "start": 0.703125,
+        "end": 1.237
+      },
+      {
+        "word": "the",
+        "start": 1.627625,
+        "end": 1.692708
+      },
+      {
+        "word": "neurologist",
+        "start": 1.692708,
+        "end": 2.460958
+      },
+      {
+        "word": "gets",
+        "start": 2.473958,
+        "end": 2.669291
+      },
+      {
+        "word": "one",
+        "start": 2.682291,
+        "end": 3.138041
+      },
+      {
+        "word": "clear",
+        "start": 3.151041,
+        "end": 3.502624
+      },
+      {
+        "word": "page",
+        "start": 3.502625,
+        "end": 4.114625
+      }
+    ]
+  },
+  "why": {
+    "text": "Built for frontline care: locally adapted, minimal staff friction, EU privacy by design. We measure; doctors decide.",
+    "words": [
+      {
+        "word": "Built",
+        "start": 0.104166,
+        "end": 0.312499
+      },
+      {
+        "word": "for",
+        "start": 0.325541,
+        "end": 0.468791
+      },
+      {
+        "word": "frontline",
+        "start": 0.481791,
+        "end": 0.989624
+      },
+      {
+        "word": "care",
+        "start": 1.002625,
+        "end": 1.38025
+      },
+      {
+        "word": "locally",
+        "start": 1.953125,
+        "end": 2.34375
+      },
+      {
+        "word": "adapted",
+        "start": 2.34375,
+        "end": 2.96875
+      },
+      {
+        "word": "minimal",
+        "start": 3.4245,
+        "end": 3.710958
+      },
+      {
+        "word": "staff",
+        "start": 3.710958,
+        "end": 4.088583
+      },
+      {
+        "word": "friction",
+        "start": 4.101583,
+        "end": 4.635458
+      },
+      {
+        "word": "EU",
+        "start": 5.169291,
+        "end": 5.533874
+      },
+      {
+        "word": "privacy",
+        "start": 5.546875,
+        "end": 6.145833
+      },
+      {
+        "word": "by",
+        "start": 6.158875,
+        "end": 6.328166
+      },
+      {
+        "word": "design",
+        "start": 6.341166,
+        "end": 6.822957
+      },
+      {
+        "word": "We",
+        "start": 7.239583,
+        "end": 7.356791
+      },
+      {
+        "word": "measure",
+        "start": 7.356791,
+        "end": 7.838582
+      },
+      {
+        "word": "doctors",
+        "start": 8.125,
+        "end": 8.541666
+      },
+      {
+        "word": "decide",
+        "start": 8.541666,
+        "end": 9.127624
+      }
+    ]
+  },
+  "radar": {
+    "text": "Global players like Canary Speech and Linus Health's Aural Analytics are built for heavy cloud platforms and clinical trials. VoxWave is built for the clinic floor.",
+    "words": [
+      {
+        "word": "Global",
+        "start": 0.104166,
+        "end": 0.468749
+      },
+      {
+        "word": "players",
+        "start": 0.46875,
+        "end": 0.911458
+      },
+      {
+        "word": "like",
+        "start": 0.911458,
+        "end": 1.093749
+      },
+      {
+        "word": "Canary",
+        "start": 1.106791,
+        "end": 1.562499
+      },
+      {
+        "word": "Speech",
+        "start": 1.5625,
+        "end": 2.096375
+      },
+      {
+        "word": "and",
+        "start": 2.226583,
+        "end": 2.421874
+      },
+      {
+        "word": "Linus",
+        "start": 2.421875,
+        "end": 2.864583
+      },
+      {
+        "word": "Health's",
+        "start": 2.864583,
+        "end": 3.164083
+      },
+      {
+        "word": "Aural",
+        "start": 3.177083,
+        "end": 3.463541
+      },
+      {
+        "word": "Analytics",
+        "start": 3.463541,
+        "end": 4.036457
+      },
+      {
+        "word": "are",
+        "start": 4.257833,
+        "end": 4.440124
+      },
+      {
+        "word": "built",
+        "start": 4.453125,
+        "end": 4.739583
+      },
+      {
+        "word": "for",
         "start": 4.739583,
-        "end": 5.260416
+        "end": 4.934916
+      },
+      {
+        "word": "heavy",
+        "start": 4.934916,
+        "end": 5.377624
+      },
+      {
+        "word": "cloud",
+        "start": 5.390625,
+        "end": 5.755208
+      },
+      {
+        "word": "platforms",
+        "start": 5.755208,
+        "end": 6.562499
+      },
+      {
+        "word": "and",
+        "start": 6.70575,
+        "end": 6.927083
+      },
+      {
+        "word": "clinical",
+        "start": 6.927083,
+        "end": 7.343749
+      },
+      {
+        "word": "trials",
+        "start": 7.34375,
+        "end": 7.994791
+      },
+      {
+        "word": "VoxWave",
+        "start": 8.4245,
+        "end": 8.984416
+      },
+      {
+        "word": "is",
+        "start": 9.101583,
+        "end": 9.231791
+      },
+      {
+        "word": "built",
+        "start": 9.244791,
+        "end": 9.635416
+      },
+      {
+        "word": "for",
+        "start": 9.713541,
+        "end": 9.856791
+      },
+      {
+        "word": "the",
+        "start": 9.856791,
+        "end": 9.934916
+      },
+      {
+        "word": "clinic",
+        "start": 9.947916,
+        "end": 10.286457
+      },
+      {
+        "word": "floor",
+        "start": 10.2995,
+        "end": 10.76825
+      }
+    ]
+  },
+  "market": {
+    "text": "More than ten million people live with Parkinson's. Sixteen thousand in the Baltics. We start in Lithuania: neuro-rehab clinics and hospitals in Vilnius and Kaunas, with patient associations and university hospitals opening doors.",
+    "words": [
+      {
+        "word": "More",
+        "start": 0.078125,
+        "end": 0.247416
+      },
+      {
+        "word": "than",
+        "start": 0.247416,
+        "end": 0.429707
+      },
+      {
+        "word": "ten",
+        "start": 0.546875,
+        "end": 0.885416
+      },
+      {
+        "word": "million",
+        "start": 0.898458,
+        "end": 1.341166
+      },
+      {
+        "word": "people",
+        "start": 1.341166,
+        "end": 1.731791
+      },
+      {
+        "word": "live",
+        "start": 1.731791,
+        "end": 2.018249
+      },
+      {
+        "word": "with",
+        "start": 2.03125,
+        "end": 2.135416
+      },
+      {
+        "word": "Parkinson's",
+        "start": 2.148458,
+        "end": 2.994833
+      },
+      {
+        "word": "Sixteen",
+        "start": 3.411458,
+        "end": 3.906249
+      },
+      {
+        "word": "thousand",
+        "start": 3.90625,
+        "end": 4.479166
+      },
+      {
+        "word": "in",
+        "start": 4.492208,
+        "end": 4.557333
+      },
+      {
+        "word": "the",
+        "start": 4.570333,
+        "end": 4.635416
+      },
+      {
+        "word": "Baltics",
+        "start": 4.635416,
+        "end": 5.364582
+      },
+      {
+        "word": "We",
+        "start": 5.78125,
+        "end": 5.898458
+      },
+      {
+        "word": "start",
+        "start": 5.898458,
+        "end": 6.236999
+      },
+      {
+        "word": "in",
+        "start": 6.25,
+        "end": 6.367208
+      },
+      {
+        "word": "Lithuania",
+        "start": 6.380208,
+        "end": 7.083333
+      },
+      {
+        "word": "neuro-rehab",
+        "start": 7.65625,
+        "end": 8.333333
+      },
+      {
+        "word": "clinics",
+        "start": 8.346375,
+        "end": 8.906291
+      },
+      {
+        "word": "and",
+        "start": 9.21875,
+        "end": 9.348958
+      },
+      {
+        "word": "hospitals",
+        "start": 9.348958,
+        "end": 10.143249
+      },
+      {
+        "word": "in",
+        "start": 10.14325,
+        "end": 10.273458
+      },
+      {
+        "word": "Vilnius",
+        "start": 10.286458,
+        "end": 10.950541
+      },
+      {
+        "word": "and",
+        "start": 10.963541,
+        "end": 11.041666
+      },
+      {
+        "word": "Kaunas",
+        "start": 11.054708,
+        "end": 11.770874
+      },
+      {
+        "word": "with",
+        "start": 12.01825,
+        "end": 12.1745
+      },
+      {
+        "word": "patient",
+        "start": 12.1875,
+        "end": 12.591166
+      },
+      {
+        "word": "associations",
+        "start": 12.591166,
+        "end": 13.541707
+      },
+      {
+        "word": "and",
+        "start": 13.554708,
+        "end": 13.684916
+      },
+      {
+        "word": "university",
+        "start": 13.684916,
+        "end": 14.283874
+      },
+      {
+        "word": "hospitals",
+        "start": 14.283875,
+        "end": 15.026083
+      },
+      {
+        "word": "opening",
+        "start": 15.14325,
+        "end": 15.46875
+      },
+      {
+        "word": "doors",
+        "start": 15.46875,
+        "end": 15.989583
+      }
+    ]
+  },
+  "pay": {
+    "text": "We sell to private clinics and public health providers: forty euros a month per patient. Free for the patient, device included.",
+    "words": [
+      {
+        "word": "We",
+        "start": 0.104166,
+        "end": 0.208332
+      },
+      {
+        "word": "sell",
+        "start": 0.208333,
+        "end": 0.494791
+      },
+      {
+        "word": "to",
+        "start": 0.507833,
+        "end": 0.624999
+      },
+      {
+        "word": "private",
+        "start": 0.625,
+        "end": 1.119791
+      },
+      {
+        "word": "clinics",
+        "start": 1.119791,
+        "end": 1.666666
+      },
+      {
+        "word": "and",
+        "start": 1.796875,
+        "end": 1.953125
+      },
+      {
+        "word": "public",
+        "start": 1.953125,
+        "end": 2.33075
+      },
+      {
+        "word": "health",
+        "start": 2.33075,
+        "end": 2.539083
+      },
+      {
+        "word": "providers",
+        "start": 2.539083,
+        "end": 3.190124
+      },
+      {
+        "word": "forty",
+        "start": 3.476583,
+        "end": 3.789083
+      },
+      {
+        "word": "euros",
+        "start": 3.802083,
+        "end": 4.361999
+      },
+      {
+        "word": "a",
+        "start": 4.479166,
+        "end": 4.557291
+      },
+      {
+        "word": "month",
+        "start": 4.570333,
+        "end": 4.999999
+      },
+      {
+        "word": "per",
+        "start": 5,
+        "end": 5.15625
+      },
+      {
+        "word": "patient",
+        "start": 5.15625,
+        "end": 5.664083
+      },
+      {
+        "word": "Free",
+        "start": 6.119791,
+        "end": 6.432291
+      },
+      {
+        "word": "for",
+        "start": 6.445333,
+        "end": 6.562499
+      },
+      {
+        "word": "the",
+        "start": 6.5625,
+        "end": 6.640625
+      },
+      {
+        "word": "patient",
+        "start": 6.640625,
+        "end": 7.109375
+      },
+      {
+        "word": "device",
+        "start": 7.135416,
+        "end": 7.565124
+      },
+      {
+        "word": "included",
+        "start": 7.565125,
+        "end": 8.151083
+      }
+    ]
+  },
+  "unit": {
+    "text": "That's four hundred and eighty euros a year. Sessions, cloud, the lent device and support cost about a hundred: roughly eighty percent contribution margin.",
+    "words": [
+      {
+        "word": "That's",
+        "start": 0.104166,
+        "end": 0.286457
+      },
+      {
+        "word": "four",
+        "start": 0.286458,
+        "end": 0.572916
+      },
+      {
+        "word": "hundred",
+        "start": 0.585958,
+        "end": 0.794291
+      },
+      {
+        "word": "and",
+        "start": 0.794291,
+        "end": 0.924499
+      },
+      {
+        "word": "eighty",
+        "start": 1.067708,
+        "end": 1.276041
+      },
+      {
+        "word": "euros",
+        "start": 1.276041,
+        "end": 1.666666
+      },
+      {
+        "word": "a",
+        "start": 1.679708,
+        "end": 1.705749
+      },
+      {
+        "word": "year",
+        "start": 1.71875,
+        "end": 2.1745
+      },
+      {
+        "word": "Sessions",
+        "start": 2.591166,
+        "end": 3.177124
+      },
+      {
+        "word": "cloud",
+        "start": 3.190125,
+        "end": 3.737
+      },
+      {
+        "word": "the",
+        "start": 3.932291,
+        "end": 4.036457
+      },
+      {
+        "word": "lent",
+        "start": 4.036458,
+        "end": 4.270833
+      },
+      {
+        "word": "device",
+        "start": 4.283875,
+        "end": 4.856791
+      },
+      {
+        "word": "and",
+        "start": 4.856791,
+        "end": 4.986999
+      },
+      {
+        "word": "support",
+        "start": 4.987,
+        "end": 5.416666
+      },
+      {
+        "word": "cost",
+        "start": 5.416666,
+        "end": 5.872416
+      },
+      {
+        "word": "about",
+        "start": 5.872416,
+        "end": 6.145874
+      },
+      {
+        "word": "a",
+        "start": 6.158875,
+        "end": 6.184916
+      },
+      {
+        "word": "hundred",
+        "start": 6.197916,
+        "end": 6.770832
+      },
+      {
+        "word": "roughly",
+        "start": 7.317708,
+        "end": 7.773458
+      },
+      {
+        "word": "eighty",
+        "start": 7.903666,
+        "end": 8.151041
+      },
+      {
+        "word": "percent",
+        "start": 8.151041,
+        "end": 8.671874
+      },
+      {
+        "word": "contribution",
+        "start": 8.671875,
+        "end": 9.270833
+      },
+      {
+        "word": "margin",
+        "start": 9.283875,
+        "end": 9.713583
+      }
+    ]
+  },
+  "gate": {
+    "text": "One gate stands between us and that margin: CE marking. A one-time investment, and the barrier that keeps copycats out.",
+    "words": [
+      {
+        "word": "One",
+        "start": 0.104166,
+        "end": 0.325541
+      },
+      {
+        "word": "gate",
+        "start": 0.338541,
+        "end": 0.559916
+      },
+      {
+        "word": "stands",
+        "start": 0.559916,
+        "end": 0.859374
+      },
+      {
+        "word": "between",
+        "start": 0.859375,
+        "end": 1.223958
+      },
+      {
+        "word": "us",
+        "start": 1.223958,
+        "end": 1.562499
+      },
+      {
+        "word": "and",
+        "start": 1.71875,
+        "end": 1.875
+      },
+      {
+        "word": "that",
+        "start": 1.888041,
+        "end": 2.083332
+      },
+      {
+        "word": "margin",
+        "start": 2.083333,
+        "end": 2.656249
+      },
+      {
+        "word": "CE",
+        "start": 3.112,
+        "end": 3.541666
+      },
+      {
+        "word": "marking",
+        "start": 3.541666,
+        "end": 4.010416
+      },
+      {
+        "word": "A",
+        "start": 4.427083,
+        "end": 4.492208
+      },
+      {
+        "word": "one-time",
+        "start": 4.505208,
+        "end": 4.986999
+      },
+      {
+        "word": "investment",
+        "start": 5,
+        "end": 5.598958
+      },
+      {
+        "word": "and",
+        "start": 5.885416,
+        "end": 5.950541
+      },
+      {
+        "word": "the",
+        "start": 5.950541,
+        "end": 6.041666
+      },
+      {
+        "word": "barrier",
+        "start": 6.041666,
+        "end": 6.523457
+      },
+      {
+        "word": "that",
+        "start": 6.523458,
+        "end": 6.666666
+      },
+      {
+        "word": "keeps",
+        "start": 6.666666,
+        "end": 7.005207
+      },
+      {
+        "word": "copycats",
+        "start": 7.005208,
+        "end": 7.734374
+      },
+      {
+        "word": "out",
+        "start": 7.734375,
+        "end": 8.098958
+      }
+    ]
+  },
+  "payback": {
+    "text": "About three hundred patients repay it. Then each patient adds nearly four hundred euros a year. A thousand patients, our three-year target, means close to four hundred thousand.",
+    "words": [
+      {
+        "word": "About",
+        "start": 0.091166,
+        "end": 0.403666
+      },
+      {
+        "word": "three",
+        "start": 0.416666,
+        "end": 0.703124
+      },
+      {
+        "word": "hundred",
+        "start": 0.716166,
+        "end": 0.937499
+      },
+      {
+        "word": "patients",
+        "start": 0.9375,
+        "end": 1.432291
+      },
+      {
+        "word": "repay",
+        "start": 1.445333,
+        "end": 1.901041
+      },
+      {
+        "word": "it",
+        "start": 1.901041,
+        "end": 2.070332
+      },
+      {
+        "word": "Then",
+        "start": 2.487,
+        "end": 2.669291
+      },
+      {
+        "word": "each",
+        "start": 2.747416,
+        "end": 2.942707
+      },
+      {
+        "word": "patient",
+        "start": 2.942708,
+        "end": 3.398458
+      },
+      {
+        "word": "adds",
+        "start": 3.411458,
+        "end": 3.932291
+      },
+      {
+        "word": "nearly",
+        "start": 4.088541,
+        "end": 4.505207
+      },
+      {
+        "word": "four",
+        "start": 4.505208,
+        "end": 4.856791
+      },
+      {
+        "word": "hundred",
+        "start": 4.856791,
+        "end": 5.104166
+      },
+      {
+        "word": "euros",
+        "start": 5.104166,
+        "end": 5.455749
+      },
+      {
+        "word": "a",
+        "start": 5.46875,
+        "end": 5.481791
+      },
+      {
+        "word": "year",
+        "start": 5.494791,
+        "end": 5.963541
+      },
+      {
+        "word": "A",
+        "start": 6.367208,
+        "end": 6.406291
+      },
+      {
+        "word": "thousand",
+        "start": 6.419291,
+        "end": 6.901041
+      },
+      {
+        "word": "patients",
+        "start": 6.901041,
+        "end": 7.513041
+      },
+      {
+        "word": "our",
+        "start": 7.695333,
+        "end": 7.916708
+      },
+      {
+        "word": "three-year",
+        "start": 8.059916,
+        "end": 8.763041
+      },
+      {
+        "word": "target",
+        "start": 8.776041,
+        "end": 9.205749
+      },
+      {
+        "word": "means",
+        "start": 9.648458,
+        "end": 9.908874
+      },
+      {
+        "word": "close",
+        "start": 9.908875,
+        "end": 10.2995
+      },
+      {
+        "word": "to",
+        "start": 10.2995,
+        "end": 10.429708
+      },
+      {
+        "word": "four",
+        "start": 10.442708,
+        "end": 10.911458
+      },
+      {
+        "word": "hundred",
+        "start": 10.911458,
+        "end": 11.171874
+      },
+      {
+        "word": "thousand",
+        "start": 11.171875,
+        "end": 11.70575
+      }
+    ]
+  },
+  "scale": {
+    "text": "Across the Baltics: nearly eight million euros a year. Next: the rest of the EU, one language at a time.",
+    "words": [
+      {
+        "word": "Across",
+        "start": 0.104166,
+        "end": 0.494791
+      },
+      {
+        "word": "the",
+        "start": 0.494791,
+        "end": 0.585957
+      },
+      {
+        "word": "Baltics",
+        "start": 0.585958,
+        "end": 1.263041
+      },
+      {
+        "word": "nearly",
+        "start": 1.640625,
+        "end": 2.096375
+      },
+      {
+        "word": "eight",
+        "start": 2.1875,
+        "end": 2.395833
+      },
+      {
+        "word": "million",
+        "start": 2.408875,
+        "end": 3.007833
+      },
+      {
+        "word": "euros",
+        "start": 3.007833,
+        "end": 3.437499
+      },
+      {
+        "word": "a",
+        "start": 3.4375,
+        "end": 3.463541
+      },
+      {
+        "word": "year",
+        "start": 3.463541,
+        "end": 3.945332
+      },
+      {
+        "word": "Next",
+        "start": 4.348958,
+        "end": 4.843749
+      },
+      {
+        "word": "the",
+        "start": 5.130208,
+        "end": 5.221374
+      },
+      {
+        "word": "rest",
+        "start": 5.221375,
+        "end": 5.494791
+      },
+      {
+        "word": "of",
+        "start": 5.494791,
+        "end": 5.546874
+      },
+      {
+        "word": "the",
+        "start": 5.546875,
+        "end": 5.598958
+      },
+      {
+        "word": "EU",
+        "start": 5.598958,
+        "end": 6.236999
+      },
+      {
+        "word": "one",
+        "start": 6.70575,
+        "end": 6.940125
+      },
+      {
+        "word": "language",
+        "start": 6.940125,
+        "end": 7.278666
+      },
+      {
+        "word": "at",
+        "start": 7.278666,
+        "end": 7.343749
+      },
+      {
+        "word": "a",
+        "start": 7.34375,
+        "end": 7.382833
+      },
+      {
+        "word": "time",
+        "start": 7.382833,
+        "end": 7.825541
+      }
+    ]
+  },
+  "team": {
+    "text": "Meet FDI Protocol. Martin leads voice AI, Marco product and finance, Victor go-to-market, Javier hardware.",
+    "words": [
+      {
+        "word": "Meet",
+        "start": 0.084958,
+        "end": 0.351958
+      },
+      {
+        "word": "FDI",
+        "start": 0.546125,
+        "end": 1.1165
+      },
+      {
+        "word": "Protocol",
+        "start": 1.201458,
+        "end": 1.893208
+      },
+      {
+        "word": "Martin",
+        "start": 2.281541,
+        "end": 2.657749
+      },
+      {
+        "word": "leads",
+        "start": 2.65775,
+        "end": 2.92475
+      },
+      {
+        "word": "voice",
+        "start": 2.92475,
+        "end": 3.264541
+      },
+      {
+        "word": "AI",
+        "start": 3.276708,
+        "end": 3.847083
+      },
+      {
+        "word": "Marco",
+        "start": 4.126208,
+        "end": 4.429624
+      },
+      {
+        "word": "product",
+        "start": 4.44175,
+        "end": 4.878625
+      },
+      {
+        "word": "and",
+        "start": 4.890791,
+        "end": 4.951457
+      },
+      {
+        "word": "finance",
+        "start": 4.951458,
+        "end": 5.728166
+      },
+      {
+        "word": "Victor",
+        "start": 5.983,
+        "end": 6.359208
+      },
+      {
+        "word": "go-to-market",
+        "start": 6.371375,
+        "end": 7.014583
+      },
+      {
+        "word": "Javier",
+        "start": 7.245125,
+        "end": 7.682
+      },
+      {
+        "word": "hardware",
+        "start": 7.682041,
+        "end": 8.325249
+      }
+    ]
+  },
+  "proto": {
+    "text": "We've built health hardware before: a stroke-screening glove for the Harvard HSIL Hackathon.",
+    "words": [
+      {
+        "word": "We've",
+        "start": 0.097083,
+        "end": 0.364083
+      },
+      {
+        "word": "built",
+        "start": 0.364083,
+        "end": 0.594666
+      },
+      {
+        "word": "health",
+        "start": 0.594666,
+        "end": 0.873791
+      },
+      {
+        "word": "hardware",
+        "start": 0.873791,
+        "end": 1.407791
+      },
+      {
+        "word": "before",
+        "start": 1.419916,
+        "end": 1.917499
+      },
+      {
+        "word": "a",
+        "start": 2.439333,
+        "end": 2.463583
+      },
+      {
+        "word": "stroke-screening",
+        "start": 2.463583,
+        "end": 3.046124
+      },
+      {
+        "word": "glove",
+        "start": 3.046125,
+        "end": 3.398083
+      },
+      {
+        "word": "for",
+        "start": 3.555833,
+        "end": 3.677166
+      },
+      {
+        "word": "the",
+        "start": 3.677166,
+        "end": 3.737832
+      },
+      {
+        "word": "Harvard",
+        "start": 3.75,
+        "end": 4.284
+      },
+      {
+        "word": "HSIL",
+        "start": 4.429625,
+        "end": 5
+      },
+      {
+        "word": "Hackathon",
+        "start": 5,
+        "end": 5.570375
+      }
+    ]
+  },
+  "close": {
+    "text": "Between visits, a voice still has something to say. VoxWave makes sure someone hears it. What if the answer was there all along?",
+    "words": [
+      {
+        "word": "Between",
+        "start": 0.117208,
+        "end": 0.546874
+      },
+      {
+        "word": "visits",
+        "start": 0.546875,
+        "end": 1.223958
+      },
+      {
+        "word": "a",
+        "start": 1.380208,
+        "end": 1.458333
+      },
+      {
+        "word": "voice",
+        "start": 1.471375,
+        "end": 2.122416
+      },
+      {
+        "word": "still",
+        "start": 2.252625,
+        "end": 2.721375
+      },
+      {
+        "word": "has",
+        "start": 2.721375,
+        "end": 2.981791
+      },
+      {
+        "word": "something",
+        "start": 2.981791,
+        "end": 3.359374
+      },
+      {
+        "word": "to",
+        "start": 3.359375,
+        "end": 3.4375
+      },
+      {
+        "word": "say",
+        "start": 3.450541,
+        "end": 4.023457
+      },
+      {
+        "word": "VoxWave",
+        "start": 4.453125,
+        "end": 5.052083
+      },
+      {
+        "word": "makes",
+        "start": 5.065125,
+        "end": 5.273458
+      },
+      {
+        "word": "sure",
+        "start": 5.273458,
+        "end": 5.507833
+      },
+      {
+        "word": "someone",
+        "start": 5.507833,
+        "end": 5.755208
+      },
+      {
+        "word": "hears",
+        "start": 5.755208,
+        "end": 6.067708
+      },
+      {
+        "word": "it",
+        "start": 6.067708,
+        "end": 6.263041
+      },
+      {
+        "word": "What",
+        "start": 6.679708,
+        "end": 6.744791
+      },
+      {
+        "word": "if",
+        "start": 6.744791,
+        "end": 6.822916
+      },
+      {
+        "word": "the",
+        "start": 6.822916,
+        "end": 6.914082
+      },
+      {
+        "word": "answer",
+        "start": 6.914083,
+        "end": 7.304708
+      },
+      {
+        "word": "was",
+        "start": 7.304708,
+        "end": 7.434916
+      },
+      {
+        "word": "there",
+        "start": 7.434916,
+        "end": 7.578124
+      },
+      {
+        "word": "all",
+        "start": 7.578125,
+        "end": 7.747416
+      },
+      {
+        "word": "along",
+        "start": 7.747416,
+        "end": 8.190124
       }
     ]
   }

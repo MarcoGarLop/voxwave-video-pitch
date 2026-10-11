@@ -1,30 +1,34 @@
 import React from 'react';
-import {AbsoluteFill, Easing, interpolate, spring, useCurrentFrame, useVideoConfig} from 'remotion';
+import {AbsoluteFill, Easing, interpolate, interpolateColors, spring, useCurrentFrame, useVideoConfig} from 'remotion';
 import {COLORS, FONTS} from '../../brand/tokens';
 import {BrandBackground} from '../../components/BrandBackground';
 import {Sfx} from '../../components/Sfx';
 import {VoiceOver} from '../../components/VoiceOver';
 import {wordTime} from '../../data/vo';
 import {getScene} from '../config';
+import {CLOSE_WAVE, UNDERLINE, wavePath} from '../shared/handoffs';
 import {AlertCard, CARDS, DashboardChrome, LiveCard, MarkersCard, SCREEN_H, SCREEN_W, TrendCard, type CardId} from './MvpScreens';
 
 const scene = getScene('s08');
 const vo = (word: string) => scene.voAt + wordTime('s08', word);
 
 const T = {
-  pullEnd: 0.85,
-  dot: 0.42,
-  boot: 0.72,
-  layout: 3.35,
+  pullEnd: 0.6,
+  dot: 0.18,
+  boot: 0.36,
+  next: vo('next'),
+  layout: vo('our') - 0.35,
   our: vo('our'),
   mvp: vo('mvp'),
-  will: vo('will'),
+  live: vo('live'),
   final: vo('final'),
   weekend: vo('weekend'),
+  // Exit: the underline wave stretches across the screen, greys out and flattens (the closing starts on it).
+  exit: scene.seconds - 0.65,
 };
 
 // One continuous dashboard: each card pops in and lifts off the screen in turn, the alert stays up.
-const CARD_AT: Record<CardId, number> = {live: 1.0, markers: 1.55, trend: 2.1, alert: vo('beginning') + 0.05};
+const CARD_AT: Record<CardId, number> = {live: 0.5, markers: 0.72, trend: 0.94, alert: 1.2};
 const ORDER: CardId[] = ['live', 'markers', 'trend', 'alert'];
 
 // Laptop geometry, relative to the screen center (screen-local px).
@@ -64,12 +68,15 @@ export const S08MvpMontage: React.FC = () => {
   // Boot: a coral dot in the middle of the dark screen opens into the dashboard.
   const dot = spring({frame: (t - T.dot) * fps, fps, config: {damping: 12, stiffness: 220}});
   const boot = interpolate(t, [T.boot, T.boot + 0.3], [0, 1], {...clamp, easing: Easing.in(Easing.quad)});
+  const exit = interpolate(t, [T.exit, scene.seconds - 1 / fps], [0, 1], {...clamp, easing: Easing.inOut(Easing.cubic)});
+  const away = interpolate(exit, [0, 0.6], [0, 1], {...clamp, easing: Easing.in(Easing.quad)});
+  const lerp = (a: number, b: number) => a + (b - a) * exit;
 
   return (
     <AbsoluteFill>
       <BrandBackground />
 
-      <AbsoluteFill style={{perspective: 2600, perspectiveOrigin: `${cam.x}px ${cam.y}px`}}>
+      <AbsoluteFill style={{perspective: 2600, perspectiveOrigin: `${cam.x}px ${cam.y}px`, opacity: 1 - away, transform: `translateX(${away * 160}px)`}}>
         <div
           style={{
             position: 'absolute',
@@ -112,12 +119,21 @@ export const S08MvpMontage: React.FC = () => {
         </div>
       </AbsoluteFill>
 
-      <Headline t={t} />
+      <Headline t={t} away={away} />
+      {exit > 0 && (
+        <svg width={1920} height={1080} style={{position: 'absolute', inset: 0, overflow: 'visible'}}>
+          <path
+            d={wavePath(lerp(UNDERLINE.x0, CLOSE_WAVE.x0), lerp(UNDERLINE.x1, CLOSE_WAVE.x1), lerp(UNDERLINE.y, CLOSE_WAVE.y), lerp(UNDERLINE.amp, CLOSE_WAVE.amp))}
+            fill="none"
+            stroke={interpolateColors(exit, [0, 1], [COLORS.teal, CLOSE_WAVE.color])}
+            strokeWidth={CLOSE_WAVE.stroke}
+            strokeLinecap="round"
+          />
+        </svg>
+      )}
 
       <VoiceOver scene={scene} />
-      <Sfx name="whoosh" at={0} volume={0.35} />
       <Sfx name="blip" at={T.dot} volume={0.35} />
-      <Sfx name="whoosh-short" at={T.boot} volume={0.3} />
       <Sfx name="blip" at={CARD_AT.live} volume={0.3} />
       <Sfx name="blip-low" at={CARD_AT.markers} volume={0.3} />
       <Sfx name="blip" at={CARD_AT.trend} volume={0.3} />
@@ -126,6 +142,7 @@ export const S08MvpMontage: React.FC = () => {
       <Sfx name="impact" at={T.mvp - 0.04} volume={0.5} />
       <Sfx name="hit" at={T.final} volume={0.5} />
       <Sfx name="shimmer" at={T.weekend} volume={0.35} />
+      <Sfx name="whoosh" at={T.exit} volume={0.3} />
     </AbsoluteFill>
   );
 };
@@ -207,13 +224,13 @@ const LaptopBody: React.FC = () => {
 };
 
 // Closing line: "Our MVP — will be live at the Final Weekend."
-const Headline: React.FC<{t: number}> = ({t}) => {
+const Headline: React.FC<{t: number; away: number}> = ({t, away}) => {
   const {fps} = useVideoConfig();
   const s = (at: number, stiffness = 260) => spring({frame: (t - at) * fps, fps, config: {damping: 12, stiffness, mass: 0.6}});
-  const eyebrow = interpolate(t, [T.layout + 0.1, T.layout + 0.4], [0, 1], clamp);
+  const eyebrow = interpolate(t, [T.next, T.next + 0.3], [0, 1], clamp);
   const our = s(T.our);
   const mvp = s(T.mvp, 320);
-  const will = s(T.will);
+  const live = s(T.live);
   const fin = s(T.final, 300);
   const underline = interpolate(t, [T.weekend, T.weekend + 0.5], [0, 1], {...clamp, easing: Easing.out(Easing.cubic)});
   const word = (k: number, extra: React.CSSProperties = {}): React.CSSProperties => ({
@@ -226,17 +243,11 @@ const Headline: React.FC<{t: number}> = ({t}) => {
 
   // Underline: a little voice wave drawn under "Final Weekend."
   const W = 700;
-  const wave = new Array(61)
-    .fill(0)
-    .map((_, i) => {
-      const x = (i / 60) * W;
-      const env = Math.sin((i / 60) * Math.PI);
-      return `${i ? 'L' : 'M'} ${x} ${12 + Math.sin(i * 0.85) * 9 * env}`;
-    })
-    .join(' ');
+  const wave = wavePath(0, W, 12, UNDERLINE.amp);
 
   return (
-    <div style={{position: 'absolute', left: 120, top: 300}}>
+    <div style={{position: 'absolute', left: UNDERLINE.x0, top: 300}}>
+      <div style={{opacity: 1 - away, transform: `translateY(${-away * 30}px)`}}>
       <div style={{fontFamily: FONTS.ui, fontWeight: 700, fontSize: 20, letterSpacing: 5, color: COLORS.coral, opacity: eyebrow, marginBottom: 18}}>
         WHAT’S NEXT
       </div>
@@ -245,12 +256,13 @@ const Headline: React.FC<{t: number}> = ({t}) => {
         <span style={word(mvp)}>MVP</span>
       </div>
       <div style={{fontFamily: FONTS.display, fontWeight: 600, fontSize: 50, color: COLORS.inkSoft, marginTop: 14}}>
-        <span style={word(will)}>will be live at the</span>
+        <span style={word(live)}>live at the</span>
       </div>
       <div style={{fontFamily: FONTS.display, fontWeight: 800, fontSize: 96, lineHeight: 1.1, color: COLORS.coral}}>
         <span style={word(fin)}>Final Weekend.</span>
       </div>
-      <svg width={W} height={26} style={{marginTop: 6, overflow: 'visible'}}>
+      </div>
+      <svg width={W} height={26} style={{marginTop: 6, overflow: 'visible', opacity: away > 0 ? 0 : 1}}>
         <path d={wave} fill="none" stroke={COLORS.teal} strokeWidth={5} strokeLinecap="round" pathLength={1} strokeDasharray="1 1" strokeDashoffset={1 - underline} opacity={underline > 0 ? 1 : 0} />
       </svg>
     </div>

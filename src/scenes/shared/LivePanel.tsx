@@ -12,15 +12,11 @@ export const WAVE_HANDOFF = {
   scale: 1.6,
   translateX: 960 - PANEL.x,
   // Signal clock offset: scene 3 time + this = scene 2 time, so the waveform keeps scrolling seamlessly.
-  clockOffset: 7,
-  // Scene 2 time at which the call is accepted and the live waveform starts.
-  accept: getScene('s02').voAt + wordTime('s02', 'just') - 0.3,
-  liveStart: getScene('s02').voAt + wordTime('s02', 'just') - 0.3 + 0.15,
+  clockOffset: getScene('s02').seconds,
+  // Scene 2 time at which the first voice activity starts and the live waveform with it.
+  accept: getScene('s02').voAt + wordTime('s02', 'hold') - 0.1,
+  liveStart: getScene('s02').voAt + wordTime('s02', 'hold') + 0.05,
 };
-
-// Scene 1 ends with the logo shrinking into the VoxWave bubble floating by the phone of scene 2 (screen px).
-// unitPx: logo units -> px for the symbol at the very first frame of scene 2; symbol: its center in logo units.
-export const AVATAR_HANDOFF = {x: 760, y: 236, r: 54, unitPx: 78 / 954, symbol: {x: 634, y: 560}};
 
 // Bars center in unscaled screen coordinates (used to fly copies of the waveform around).
 export const BARS_CENTER = {x: PANEL.x - PANEL.w / 2 + 378, y: PANEL.y + 20, width: 725};
@@ -51,7 +47,7 @@ export const LivePanel: React.FC<{t: number; start: number; chrome: number; id?:
       <div style={{position: 'absolute', top: 30, left: 40, right: 40, display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: 20, letterSpacing: 3.5, fontWeight: 600, opacity: chrome}}>
         <span style={{display: 'flex', alignItems: 'center', gap: 12}}>
           <span style={{width: 14, height: 14, borderRadius: '50%', background: live ? COLORS.coral : COLORS.inkSoft, transform: `scale(${live ? 0.85 + flatPulse * 0.3 : 1})`}} />
-          {live ? 'LIVE VOICE SIGNAL' : 'WAITING FOR CALL'}
+          {live ? 'LIVE VOICE SIGNAL' : 'WAITING FOR SESSION'}
         </span>
         <span style={{fontVariantNumeric: 'tabular-nums', opacity: 0.8}}>00:{String(Math.floor(elapsed)).padStart(2, '0')}</span>
       </div>

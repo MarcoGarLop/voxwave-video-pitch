@@ -3,6 +3,7 @@ import {AbsoluteFill, Easing, interpolate, spring, useCurrentFrame, useVideoConf
 import {COLORS, FONTS} from '../../brand/tokens';
 import {BrandBackground} from '../../components/BrandBackground';
 import {Sfx} from '../../components/Sfx';
+import {StageTag} from '../../components/StageTag';
 import {VoiceOver} from '../../components/VoiceOver';
 import {wordTime} from '../../data/vo';
 import {getScene} from '../config';
@@ -25,20 +26,20 @@ const DRIFT_FROM = 12; // index of the first week that leaves the pattern
 const T = {
   land: 0.55,
   firstWeek: 0.7,
-  weekEvery: 0.245,
+  weekEvery: (vo('flags') - 0.35 - 0.25 - 0.7) / 10,
   band: vo('baseline') - 0.15,
   w13: vo('flags') - 0.35,
   w14: vo('flags'),
   alert: vo('flags') + 0.15,
   projection: vo('starts') - 0.4,
-  wipe: 7.35,
 };
 
 const weekAt = (i: number) => (i === 0 ? T.land : i < DRIFT_FROM ? T.firstWeek + (i - 1) * T.weekEvery : i === DRIFT_FROM ? T.w13 : T.w14);
 
 const clamp = {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'} as const;
 
-export const S04TrendAlert: React.FC = () => {
+// embedded: rendered (frozen) inside the next scene's report sheet — no sound, no corner tag.
+export const S04TrendAlert: React.FC<{embedded?: boolean}> = ({embedded = false}) => {
   const frame = useCurrentFrame();
   const {fps} = useVideoConfig();
   const t = frame / fps;
@@ -52,8 +53,6 @@ export const S04TrendAlert: React.FC = () => {
   const lean = interpolate(t, [T.alert, T.alert + 1.2], [0, 1], {...clamp, easing: Easing.out(Easing.cubic)});
   const camScale = interpolate(t, [0, T.alert], [1, 1.03], clamp) + lean * 0.035;
 
-  // Lights down: an ink circle grows out of the alert point and swallows the frame.
-  const wipeR = interpolate(t, [T.wipe, scene.seconds], [0, 2300], {...clamp, easing: Easing.in(Easing.cubic)});
 
   return (
     <AbsoluteFill>
@@ -68,25 +67,27 @@ export const S04TrendAlert: React.FC = () => {
       </AbsoluteFill>
       <ChartHeader t={t} />
 
-      {wipeR > 0 && (
-        <AbsoluteFill style={{clipPath: `circle(${wipeR}px at ${alertPt.x + follow}px ${alertPt.y}px)`}}>
-          <BrandBackground tone="ink" />
-        </AbsoluteFill>
+      {!embedded && (
+        <>
+          <StageTag label="ILLUSTRATIVE DATA" opacity={interpolate(t, [0.6, 1.0], [0, 1], clamp)} />
+          <Sounds pts={pts} />
+        </>
       )}
+    </AbsoluteFill>
+  );
+};
 
+const Sounds: React.FC<{pts: {at: number}[]}> = ({pts}) => (
+    <>
       <VoiceOver scene={scene} />
-      <Sfx name="whoosh-short" at={0.05} volume={0.3} />
       {pts.slice(1, DRIFT_FROM).map((p, i) => (
         <Sfx key={i} name={i % 2 ? 'blip-low' : 'blip'} at={p.at} volume={0.12} />
       ))}
       <Sfx name="shimmer" at={T.band} volume={0.15} />
       <Sfx name="blip-low" at={T.w13} volume={0.25} />
       <Sfx name="alert" at={T.w14} volume={0.6} />
-      <Sfx name="whoosh" at={T.wipe - 0.05} volume={0.45} />
-      <Sfx name="drone" at={T.wipe} volume={0.35} />
-    </AbsoluteFill>
-  );
-};
+    </>
+);
 
 // The coral point left by scene 3 travels to become week 1.
 const ArrivingDot: React.FC<{t: number; to: {x: number; y: number}}> = ({t, to}) => {

@@ -5,13 +5,13 @@ import {BrandBackground} from '../components/BrandBackground';
 import {Logo} from '../components/Logo';
 import {Subtitles} from '../components/Subtitles';
 import {VoiceOver} from '../components/VoiceOver';
-import {SCENES, sceneFrames, type SceneConfig} from '../scenes/config';
+import {BLOCK_SCENES, sceneFrames, type SceneConfig} from '../scenes/config';
 
 // Placeholder for a scene that has not been built yet: shows timing, on-screen copy, VO and the visual brief.
 export const AnimaticCard: React.FC<{scene: SceneConfig}> = ({scene}) => {
   const frame = useCurrentFrame();
   const {fps, durationInFrames} = useVideoConfig();
-  const index = SCENES.findIndex((s) => s.id === scene.id);
+  const index = BLOCK_SCENES.findIndex((s) => s.id === scene.id);
 
   const items = scene.id === 's01' ? [] : scene.onScreen;
   const span = (scene.seconds - scene.voAt - 0.8) / Math.max(items.length, 1);
@@ -22,7 +22,7 @@ export const AnimaticCard: React.FC<{scene: SceneConfig}> = ({scene}) => {
       <VoiceOver scene={scene} />
 
       <div style={{position: 'absolute', top: 60, left: 90, right: 90, display: 'flex', justifyContent: 'space-between', fontFamily: FONTS.ui, fontSize: 22, letterSpacing: 4, color: COLORS.teal, fontWeight: 600}}>
-        <span>VOXWAVE · BLOCK 2 — SOLUTION · ANIMATIC</span>
+        <span>VOXWAVE · SOLUTION &amp; MARKET · ANIMATIC</span>
         <span style={{color: COLORS.ink}}>{scene.slot}</span>
       </div>
 
@@ -56,7 +56,7 @@ export const AnimaticCard: React.FC<{scene: SceneConfig}> = ({scene}) => {
       <Subtitles scene={scene} bottom={110} />
 
       <div style={{position: 'absolute', left: 90, right: 90, bottom: 50, display: 'flex', gap: 8}}>
-        {SCENES.map((s, i) => {
+        {BLOCK_SCENES.map((s, i) => {
           const progress = i < index ? 1 : i > index ? 0 : frame / durationInFrames;
           return (
             <div key={s.id} style={{flex: sceneFrames(s), height: 8, borderRadius: 4, background: COLORS.inkFaint, overflow: 'hidden'}}>

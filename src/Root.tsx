@@ -2,6 +2,10 @@ import React from 'react';
 import {Composition, Folder} from 'remotion';
 import {VIDEO} from './brand/tokens';
 import {Block2} from './Block2';
+import {Block3} from './Block3';
+import {Block4} from './Block4';
+import {Pitch, PITCH_FRAMES} from './Pitch';
+import {OPENING, Opening} from './opening/Opening';
 import {AnimaticCard} from './animatic/AnimaticCard';
 import {LogoGrid} from './debug/LogoGrid';
 import {DeviceScreen} from './device/DeviceScreen';
@@ -10,12 +14,16 @@ import {DevicePreview} from './device/DevicePreview';
 import {TestSheet} from './device/TestSheet';
 import {LOGO_CENTERLINES} from './brand/logoCenterlines';
 import {SceneById} from './scenes/registry';
-import {BLOCK2_FRAMES, SCENES, sceneFrames} from './scenes/config';
+import {BLOCK2_FRAMES, CLOSE_FRAMES, FINANCE_FRAMES, SCENES, sceneFrames} from './scenes/config';
 
 export const RemotionRoot: React.FC = () => {
   return (
     <>
+      <Composition id="Pitch" component={Pitch} durationInFrames={PITCH_FRAMES} {...VIDEO} />
+      <Composition id="Opening" component={Opening} durationInFrames={OPENING.frames} {...VIDEO} />
       <Composition id="Block2" component={Block2} durationInFrames={BLOCK2_FRAMES} {...VIDEO} />
+      <Composition id="Block3-Finance" component={Block3} durationInFrames={FINANCE_FRAMES} {...VIDEO} />
+      <Composition id="Block4-Close" component={Block4} durationInFrames={CLOSE_FRAMES} {...VIDEO} />
       <Folder name="Block2-Scenes">
         {SCENES.map((scene) => (
           <Composition

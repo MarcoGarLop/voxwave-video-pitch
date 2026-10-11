@@ -22,8 +22,8 @@ export const COLORS = {
 } as const;
 
 export const FONTS = {
-  display: loadSora('normal', {weights: ['400', '600', '700', '800'], subsets: ['latin']}).fontFamily,
-  ui: loadInter('normal', {weights: ['400', '500', '600', '700'], subsets: ['latin']}).fontFamily,
+  display: loadSora('normal', {weights: ['400', '600', '700', '800'], subsets: ['latin', 'latin-ext']}).fontFamily,
+  ui: loadInter('normal', {weights: ['400', '500', '600', '700'], subsets: ['latin', 'latin-ext']}).fontFamily,
 } as const;
 
 export const VIDEO = {width: 1920, height: 1080, fps: 30} as const;

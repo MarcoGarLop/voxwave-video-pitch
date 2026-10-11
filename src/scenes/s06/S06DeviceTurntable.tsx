@@ -40,8 +40,8 @@ const T = {
   drop: sec(A.drop_from),
   land: sec(A.land),
   lidLand: sec(A.lid_land),
-  rural: vo('rural'),
-  alone: vo('people'),
+  device: vo('device'),
+  same: vo('same'),
   exit: 6.45,
 };
 
@@ -129,15 +129,12 @@ export const S06DeviceTurntable: React.FC = () => {
       <VoiceOver scene={scene} />
       <Sfx name="whoosh" at={T.drop - 0.1} volume={0.35} />
       <Sfx name="impact" at={T.land - 0.05} volume={0.55} />
-      <Sfx name="whoosh-short" at={sec(A.lid_from)} volume={0.3} />
       <Sfx name="hit" at={T.lidLand - 0.03} volume={0.45} />
       {A.screw_starts.map((f) => (
         <Sfx key={f} name="blip-low" at={sec(f + A.screw_len) - 0.03} volume={0.22} />
       ))}
-      <Sfx name="whoosh-short" at={sec(A.cable_from)} volume={0.2} />
       <Sfx name="blip" at={sec(A.plug_click)} volume={0.35} />
-      <Sfx name="blip" at={T.rural} volume={0.35} />
-      <Sfx name="blip-low" at={T.alone} volume={0.35} />
+      <Sfx name="blip" at={T.device} volume={0.35} />
       <Sfx name="whoosh" at={T.exit} volume={0.45} />
     </AbsoluteFill>
   );
@@ -146,18 +143,19 @@ export const S06DeviceTurntable: React.FC = () => {
 const Copy: React.FC<{t: number; fade: number}> = ({t, fade}) => {
   const {fps} = useVideoConfig();
   const lines = [
-    [{w: 'Designed', at: vo('designed')}, {w: 'for', at: vo('for')}],
-    [{w: 'those', at: vo('those')}, {w: 'who', at: vo('who')}],
-    [{w: 'need', at: vo('need')}, {w: 'it', at: vo('it', 1)}, {w: 'most.', at: vo('most')}],
+    [{w: 'No', at: vo('without')}, {w: 'smartphone?', at: vo('smartphone')}],
+    [{w: 'No', at: vo('or')}, {w: 'internet?', at: vo('internet')}],
+    [{w: 'We', at: vo('we')}, {w: 'thought', at: vo('thought')}],
+    [{w: 'of', at: vo('of')}, {w: 'them', at: vo('them')}, {w: 'too.', at: vo('too')}],
   ];
-  const eyebrow = interpolate(t, [vo('designed') - 0.3, vo('designed')], [0, 1], clamp);
+  const eyebrow = interpolate(t, [vo('without') - 0.3, vo('without')], [0, 1], clamp);
   return (
     <div style={{position: 'absolute', left: 130, top: 250, opacity: 1 - fade, transform: `translateX(${-fade * 120}px)`}}>
       <div style={{fontFamily: FONTS.ui, fontWeight: 700, fontSize: 20, letterSpacing: 5, color: COLORS.coral, opacity: eyebrow, marginBottom: 26}}>
-        OPTIONAL · WORKS OFFLINE
+        VOXWAVE DEVICE · WORKS OFFLINE
       </div>
       {lines.map((line, li) => (
-        <div key={li} style={{display: 'flex', gap: 24, height: 104}}>
+        <div key={li} style={{display: 'flex', gap: 22, height: 96}}>
           {line.map(({w, at}) => {
             const s = spring({frame: (t - at) * fps, fps, config: {damping: 12, stiffness: 240, mass: 0.6}});
             return (
@@ -167,9 +165,9 @@ const Copy: React.FC<{t: number; fade: number}> = ({t, fade}) => {
                   display: 'inline-block',
                   fontFamily: FONTS.display,
                   fontWeight: 800,
-                  fontSize: 92,
+                  fontSize: 84,
                   lineHeight: 1.1,
-                  color: li === 2 ? COLORS.coral : COLORS.paper,
+                  color: li >= 2 ? COLORS.coral : COLORS.paper,
                   opacity: s,
                   transform: `translateY(${(1 - s) * 40}px) scale(${1.2 - 0.2 * s})`,
                   transformOrigin: 'left bottom',
@@ -182,14 +180,14 @@ const Copy: React.FC<{t: number; fade: number}> = ({t, fade}) => {
         </div>
       ))}
       <div style={{display: 'flex', gap: 18, marginTop: 44}}>
-        <Chip t={t} at={T.rural} label="Rural areas" icon="home" />
-        <Chip t={t} at={T.alone} label="People living alone" icon="person" />
+        <Chip t={t} at={T.device} label="Simple device" icon="device" />
+        <Chip t={t} at={T.same} label="Same weekly session" icon="repeat" />
       </div>
     </div>
   );
 };
 
-const Chip: React.FC<{t: number; at: number; label: string; icon: 'home' | 'person'}> = ({t, at, label, icon}) => {
+const Chip: React.FC<{t: number; at: number; label: string; icon: 'device' | 'repeat'}> = ({t, at, label, icon}) => {
   const {fps} = useVideoConfig();
   const s = spring({frame: (t - at) * fps, fps, config: {damping: 12, stiffness: 200}});
   return (
@@ -210,16 +208,16 @@ const Chip: React.FC<{t: number; at: number; label: string; icon: 'home' | 'pers
       }}
     >
       <svg width={30} height={30} viewBox="0 0 24 24" fill="none" stroke={COLORS.coral} strokeWidth={2.2} strokeLinecap="round" strokeLinejoin="round">
-        {icon === 'home' ? (
+        {icon === 'device' ? (
           <>
-            <path d="M3 11 L12 4 L21 11" />
-            <path d="M5 10 V20 H19 V10" />
-            <path d="M10 20 V14 H14 V20" />
+            <rect x={5} y={4} width={14} height={16} rx={3} />
+            <circle cx={12} cy={14} r={2.6} />
+            <path d="M9 8 H15" />
           </>
         ) : (
           <>
-            <circle cx={12} cy={7.5} r={3.5} />
-            <path d="M5 20 C5 15.5 8 13 12 13 C16 13 19 15.5 19 20" />
+            <path d="M4 12 A8 8 0 0 1 18 7 M18 3 V7 H14" />
+            <path d="M20 12 A8 8 0 0 1 6 17 M6 21 V17 H10" />
           </>
         )}
       </svg>

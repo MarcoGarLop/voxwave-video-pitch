@@ -8,6 +8,7 @@ import {VoiceOver} from '../../components/VoiceOver';
 import {wordTime} from '../../data/vo';
 import {scrollingBars, voiceLevel} from '../../lib/voiceSignal';
 import {getScene} from '../config';
+import {StageTag} from '../../components/StageTag';
 import {BARS_CENTER, LivePanel, PANEL, WAVE_HANDOFF as H} from '../shared/LivePanel';
 
 const scene = getScene('s03');
@@ -96,8 +97,9 @@ export const S03Biomarkers: React.FC = () => {
         <FinalDot t={t} />
       </AbsoluteFill>
 
+      <StageTag label="ILLUSTRATIVE DATA" opacity={interpolate(t, [T.split, T.split + 0.4], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'}) * (1 - collapse)} />
+
       <VoiceOver scene={scene} />
-      <Sfx name="whoosh" at={T.scanStart - 0.1} volume={0.22} />
       <Sfx name="whoosh-short" at={T.split - 0.05} volume={0.45} />
       <Sfx name="shimmer" at={T.hub} volume={0.18} />
       {activeAt.map((at, i) => (

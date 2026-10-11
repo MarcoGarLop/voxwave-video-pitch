@@ -14,14 +14,15 @@ const vo = (word: string) => scene.voAt + wordTime('s07', word);
 // The Blender camera tracks its aim point, so the button (start) and the screen (end) sit at the same spot.
 const SX = 1920 / meta.width;
 const FOCUS = {x: meta.buttonStart[0] * SX, y: meta.buttonStart[1] * SX};
-const SCREEN = {x: meta.screenEnd[0] * SX, y: meta.screenEnd[1] * SX};
+// The coral "!" tile of the alert on the OLED in the last frames (measured on frame 195 of the render).
+const EXCL = {x: 1093 * SX, y: 407 * SX, size: 58};
 
 const T = {
   press: 21 / 30,
   one: vo('one'),
   offline: vo('works'),
   advice: vo('tells'),
-  exit: 6.5,
+  exit: 6.4,
 };
 
 const clamp = {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'} as const;
@@ -32,23 +33,28 @@ export const S07DeviceCloseup: React.FC = () => {
   const {fps, durationInFrames} = useVideoConfig();
   const t = frame / fps;
 
-  // Exit: dive into the OLED; its black glass becomes the ink background of scene 8.
-  const exit = interpolate(t, [T.exit, scene.seconds - 1 / fps], [0, 1], {...clamp, easing: Easing.in(Easing.cubic)});
-  const dive = 1 + exit * 4;
-  const inkR = interpolate(exit, [0.35, 1], [0, 1500], {...clamp, easing: Easing.in(Easing.quad)});
+  // Exit: the camera moves into the device and everything darkens to the ink of the circuit-board scene,
+  // which starts as if we were already inside it.
+  const exitLin = interpolate(t, [T.exit, scene.seconds - 1 / fps], [0, 1], clamp);
+  const exit = Easing.in(Easing.cubic)(exitLin);
+  const dive = 1 + 3.2 * Math.pow(exitLin, 2);
+  const center = Easing.inOut(Easing.cubic)(exitLin);
+  const dx = (960 - EXCL.x) * center;
+  const dy = (540 - EXCL.y) * center;
+  const glass = interpolate(exitLin, [0.3, 0.92], [0, 1], {...clamp, easing: Easing.in(Easing.quad)});
 
   return (
     <AbsoluteFill>
       <BrandBackground />
-      <AbsoluteFill style={{transform: `scale(${dive})`, transformOrigin: `${SCREEN.x}px ${SCREEN.y}px`}}>
+      <AbsoluteFill style={{transform: `translate(${dx}px, ${dy}px) scale(${dive})`, transformOrigin: `${EXCL.x}px ${EXCL.y}px`}}>
         <Img src={staticFile(`device/closeup/frame_${pad(Math.min(frame, durationInFrames - 1))}.png`)} style={{width: '100%', height: '100%'}} />
         <PressPulse t={t} />
       </AbsoluteFill>
 
       <Claims t={t} fade={exit} />
 
-      {inkR > 0 && (
-        <AbsoluteFill style={{clipPath: `circle(${inkR}px at ${SCREEN.x}px ${SCREEN.y}px)`}}>
+      {glass > 0 && (
+        <AbsoluteFill style={{opacity: glass}}>
           <BrandBackground tone="ink" />
         </AbsoluteFill>
       )}
@@ -57,7 +63,6 @@ export const S07DeviceCloseup: React.FC = () => {
       <Sfx name="hit" at={T.one} volume={0.6} />
       <Sfx name="blip" at={T.press} volume={0.35} />
       <Sfx name="hit" at={T.offline} volume={0.6} />
-      <Sfx name="whoosh-short" at={T.advice - 1.4} volume={0.25} />
       <Sfx name="alert" at={T.advice - 0.1} volume={0.35} />
       <Sfx name="hit" at={T.advice} volume={0.6} />
       <Sfx name="whoosh" at={T.exit} volume={0.45} />

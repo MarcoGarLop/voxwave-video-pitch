@@ -9,3 +9,6 @@ public/device/closeup/frame_*.png
 public/device/*/test_*.png
 blender/device.blend
 __pycache__/
+
+# Leftovers of interrupted TTS runs
+public/audio/vo/.tmp-*/
