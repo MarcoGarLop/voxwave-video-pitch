@@ -12,7 +12,7 @@ const TIMINGS_FILE = path.resolve('src/data/vo-timings.json');
 const LINES = {
   s01: 'Meet VoxWave.',
   gap: "Nearly ninety percent of people with Parkinson's see their speech change. Yet between visits, nobody is listening. Until now.",
-  s02: "Every week, a three-minute voice session: hold an 'aah', read a line, chat a little. A small weekly habit, for your voice.",
+  s02: "Every day, a three-minute voice session: hold an 'aah', read a line, chat a little. A small daily habit, for your voice.",
   s03: "Our AI listens for what the ear can't: tremor, pitch, rhythm and pauses.",
   s04: "It learns each patient's own baseline, and flags the moment their voice starts to drift.",
   s05: "We don't diagnose. We fill the three-to-six-month gap with data between visits.",
@@ -26,6 +26,7 @@ const LINES = {
   market: "More than ten million people live with Parkinson's. Sixteen thousand in the Baltics. We start in Lithuania: neuro-rehab clinics and hospitals in Vilnius and Kaunas, with patient associations and university hospitals opening doors.",
   // Finance block.
   pay: "We sell to private clinics and public health providers: forty euros a month per patient. Free for the patient, device included.",
+  value: {text: "Why pay? Neurologists save time, the patients who need it most are seen first, and one avoided hospital stay covers nine patients for a year.", rate: "+2%"},
   unit: "That's four hundred and eighty euros a year. Sessions, cloud, the lent device and support cost about a hundred: roughly eighty percent contribution margin.",
   gate: 'One gate stands between us and that margin: CE marking. A one-time investment, and the barrier that keeps copycats out.',
   payback: 'About three hundred patients repay it. Then each patient adds nearly four hundred euros a year. A thousand patients, our three-year target, means close to four hundred thousand.',

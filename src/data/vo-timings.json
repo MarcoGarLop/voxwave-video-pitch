@@ -15,56 +15,56 @@
     ]
   },
   "s02": {
-    "text": "Every week, a three-minute voice session: hold an 'aah', read a line, chat a little. A small weekly habit, for your voice.",
+    "text": "Every day, a three-minute voice session: hold an 'aah', read a line, chat a little. A small daily habit, for your voice.",
     "words": [
       {
         "word": "Every",
         "start": 0.091166,
-        "end": 0.351582
+        "end": 0.325541
       },
       {
-        "word": "week",
-        "start": 0.351583,
-        "end": 0.664083
+        "word": "day",
+        "start": 0.338541,
+        "end": 0.690124
       },
       {
         "word": "a",
-        "start": 0.729166,
-        "end": 0.781249
+        "start": 0.716166,
+        "end": 0.807332
       },
       {
         "word": "three-minute",
-        "start": 0.794291,
+        "start": 0.820333,
         "end": 1.419291
       },
       {
         "word": "voice",
         "start": 1.419291,
-        "end": 1.731791
+        "end": 1.757832
       },
       {
         "word": "session",
-        "start": 1.744791,
-        "end": 2.187499
+        "start": 1.757833,
+        "end": 2.200541
       },
       {
         "word": "hold",
-        "start": 2.747416,
-        "end": 2.916666
+        "start": 2.734375,
+        "end": 2.942708
       },
       {
         "word": "an",
-        "start": 2.916666,
-        "end": 3.033874
+        "start": 2.95575,
+        "end": 3.072916
       },
       {
         "word": "aah",
-        "start": 3.046875,
+        "start": 3.072916,
         "end": 3.450541
       },
       {
         "word": "read",
-        "start": 3.789083,
+        "start": 3.763041,
         "end": 3.971374
       },
       {
@@ -75,42 +75,42 @@
       {
         "word": "line",
         "start": 4.036458,
-        "end": 4.544291
+        "end": 4.531249
       },
       {
         "word": "chat",
-        "start": 4.84375,
+        "start": 4.83075,
         "end": 5.065125
       },
       {
         "word": "a",
         "start": 5.065125,
-        "end": 5.104208
+        "end": 5.117208
       },
       {
         "word": "little",
         "start": 5.117208,
-        "end": 5.507833
+        "end": 5.481791
       },
       {
         "word": "A",
-        "start": 5.911458,
-        "end": 5.963541
+        "start": 5.898458,
+        "end": 5.950541
       },
       {
         "word": "small",
-        "start": 5.963541,
-        "end": 6.419291
+        "start": 5.950541,
+        "end": 6.341166
       },
       {
-        "word": "weekly",
-        "start": 6.419291,
-        "end": 6.835957
+        "word": "daily",
+        "start": 6.354166,
+        "end": 6.705749
       },
       {
         "word": "habit",
-        "start": 6.835958,
-        "end": 7.291708
+        "start": 6.70575,
+        "end": 7.148458
       },
       {
         "word": "for",
@@ -120,12 +120,12 @@
       {
         "word": "your",
         "start": 7.434916,
-        "end": 7.526082
+        "end": 7.526041
       },
       {
         "word": "voice",
-        "start": 7.539083,
-        "end": 8.190124
+        "start": 7.526041,
+        "end": 8.124999
       }
     ]
   },
@@ -1971,6 +1971,136 @@
         "word": "along",
         "start": 7.747416,
         "end": 8.190124
+      }
+    ]
+  },
+  "value": {
+    "text": "Why pay? Neurologists save time, the patients who need it most are seen first, and one avoided hospital stay covers nine patients for a year.",
+    "words": [
+      {
+        "word": "Why",
+        "start": 0.098041,
+        "end": 0.245082
+      },
+      {
+        "word": "pay",
+        "start": 0.245083,
+        "end": 0.600458
+      },
+      {
+        "word": "Neurologists",
+        "start": 0.992666,
+        "end": 1.642166
+      },
+      {
+        "word": "save",
+        "start": 1.642166,
+        "end": 2.046582
+      },
+      {
+        "word": "time",
+        "start": 2.058833,
+        "end": 2.512249
+      },
+      {
+        "word": "the",
+        "start": 2.781875,
+        "end": 2.867666
+      },
+      {
+        "word": "patients",
+        "start": 2.879916,
+        "end": 3.321082
+      },
+      {
+        "word": "who",
+        "start": 3.321083,
+        "end": 3.394624
+      },
+      {
+        "word": "need",
+        "start": 3.406875,
+        "end": 3.590708
+      },
+      {
+        "word": "it",
+        "start": 3.602958,
+        "end": 3.688708
+      },
+      {
+        "word": "most",
+        "start": 3.688708,
+        "end": 4.105374
+      },
+      {
+        "word": "are",
+        "start": 4.105375,
+        "end": 4.178916
+      },
+      {
+        "word": "seen",
+        "start": 4.191166,
+        "end": 4.558832
+      },
+      {
+        "word": "first",
+        "start": 4.571083,
+        "end": 5.269624
+      },
+      {
+        "word": "and",
+        "start": 5.723041,
+        "end": 5.808832
+      },
+      {
+        "word": "one",
+        "start": 5.821083,
+        "end": 5.943624
+      },
+      {
+        "word": "avoided",
+        "start": 5.943625,
+        "end": 6.28675
+      },
+      {
+        "word": "hospital",
+        "start": 6.28675,
+        "end": 6.740166
+      },
+      {
+        "word": "stay",
+        "start": 6.740208,
+        "end": 7.242666
+      },
+      {
+        "word": "covers",
+        "start": 7.389708,
+        "end": 7.720583
+      },
+      {
+        "word": "nine",
+        "start": 7.720583,
+        "end": 8.039208
+      },
+      {
+        "word": "patients",
+        "start": 8.051458,
+        "end": 8.468124
+      },
+      {
+        "word": "for",
+        "start": 8.480375,
+        "end": 8.627416
+      },
+      {
+        "word": "a",
+        "start": 8.627458,
+        "end": 8.651958
+      },
+      {
+        "word": "year",
+        "start": 8.651958,
+        "end": 9.031874
       }
     ]
   }

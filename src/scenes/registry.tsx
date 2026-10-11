@@ -17,6 +17,7 @@ import {WhyScene} from './why/WhyScene';
 import {RadarScene} from './radar/RadarScene';
 import {MarketScene} from './market/MarketScene';
 import {PayScene} from './pay/PayScene';
+import {ValueScene} from './value/ValueScene';
 import {UnitScene} from './unit/UnitScene';
 import {GateScene} from './gate/GateScene';
 import {PaybackScene} from './payback/PaybackScene';
@@ -41,6 +42,7 @@ const BUILT: Partial<Record<SceneId, React.FC>> = {
   radar: RadarScene,
   market: MarketScene,
   pay: PayScene,
+  value: ValueScene,
   unit: UnitScene,
   gate: GateScene,
   payback: PaybackScene,

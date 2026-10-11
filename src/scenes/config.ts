@@ -2,7 +2,7 @@ import {VIDEO} from '../brand/tokens';
 
 export type SceneId =
   | 's01' | 'gap' | 's02' | 's03' | 's04' | 'report' | 's05' | 's06' | 's07' | 'why' | 'radar' | 'market' | 's08'
-  | 'pay' | 'unit' | 'gate' | 'payback' | 'scale'
+  | 'pay' | 'value' | 'unit' | 'gate' | 'payback' | 'scale'
   | 'team' | 'proto' | 'close';
 
 export type SceneConfig = {
@@ -43,11 +43,11 @@ export const SCENES: SceneConfig[] = [
   {
     id: 's02',
     slot: '1:01 – 1:08',
-    title: 'Weekly voice session',
+    title: 'Daily voice session',
     seconds: 9,
     voAt: 0.3,
-    onScreen: ['Your weekly voice session · 3 min', 'Hold an “aah”', 'Read a line', 'Chat a little', 'Session complete', 'Once a week. 3 minutes.', 'A weekly habit, for your voice.'],
-    visual: 'La caja del hueco es el móvil. Llega la notificación "Your weekly voice session · 3 min", se abre la app y las tres actividades (aah sostenida, leer una frase, charlar un poco) se encienden y se marcan al nombrarlas. Sesión completada, racha +1. A la derecha la señal de voz en vivo; la cámara entra en la onda.',
+    onScreen: ['Your daily voice session · 3 min', 'Hold an “aah”', 'Read a line', 'Chat a little', 'Session complete', 'Every day. 3 minutes.', 'A daily habit, for your voice.'],
+    visual: 'La caja del hueco es el móvil. Llega la notificación "Your daily voice session · 3 min", se abre la app y las tres actividades (aah sostenida, leer una frase, charlar un poco) se encienden y se marcan al nombrarlas. Sesión completada, racha +1. A la derecha la señal de voz en vivo; la cámara entra en la onda.',
   },
   {
     id: 's03',
@@ -149,7 +149,7 @@ SCENES.push(
     title: 'Who pays · price',
     seconds: 10.3,
     voAt: 1.2,
-    onScreen: ['Who pays?', 'Private clinics · B2B', 'Public health · B2G', '€40 / month · per patient', 'Paid by clinics & public health', '€0 for the patient', 'Device included'],
+    onScreen: ['Who pays?', 'Private clinics · B2B', 'Public health · B2G', '€40 / month · per patient', 'Paid by clinics & public health', '€0 for the patient', 'Device included if needed'],
     visual: 'El punto coral cae como una moneda y enciende el papel. "WHO PAYS?" de golpe. Se construye un hospital planta a planta y la moneda se posa en el tejado como su cruz. Un poste se clava en el suelo (polvo + temblor) y se despliega el cartel €40 / month · PAID BY CLINICS & HOSPITALS; cae un segundo cartel coral: €0 FOR THE PATIENT · DEVICE INCLUDED. El cartel de precio gira: €480 / year.',
   },
   {
@@ -221,11 +221,21 @@ SCENES.push({
   visual: 'La onda gris y casi plana (con dos marcas VISIT) tiembla con la voz pero nadie la escucha. En "VoxWave makes sure someone hears it" un punto coral la recorre y la enciende en una onda de voz viva, que se recoge en el logo (el mismo gesto de tres trazos de la apertura). La pregunta "What if the answer was there all along?" y "Creative Shock 2026 · FdiProtocol". Fundido a negro.',
 });
 
+SCENES.push({
+  id: 'value',
+  slot: '',
+  title: 'Why pay?',
+  seconds: 10.9,
+  voAt: 0.5,
+  onScreen: ['Why pay?', 'TIME · Neurologist time', 'TRIAGE · The right patient, seen first', '€4,400 · 1 avoided hospital stay', '= covers 9 patients for a year'],
+  visual: 'La etiqueta coral de €480 cae en el platillo izquierdo de una balanza en line art y se convierte en una pesa. En el derecho se apilan pesas, una encima de otra, al nombrarlas: TIME (tiempo del neurólogo), TRIAGE (el paciente adecuado, antes) y €4,400 (un ingreso hospitalario evitado), que vuelca la balanza. "= covers 9 patients for a year". La pesa vuelve a ser la etiqueta y regresa al centro (así empieza la escena de costes).',
+});
+
 // The order the scenes play in the block (0:55 onwards).
 export const BLOCK_ORDER: SceneId[] = ['s01', 'gap', 's02', 's03', 's04', 'report', 's06', 's07', 'why', 'radar', 'market'];
 // The block starts where the team's cinematic opening is cut (src/opening/Opening.tsx).
 const BLOCK_START = 57.5;
-export const FINANCE_ORDER: SceneId[] = ['pay', 'unit', 'gate', 'payback', 'scale'];
+export const FINANCE_ORDER: SceneId[] = ['pay', 'value', 'unit', 'gate', 'payback', 'scale'];
 export const CLOSE_ORDER: SceneId[] = ['team', 'proto', 's08', 'close'];
 
 export const sceneFrames = (scene: SceneConfig) => Math.round(scene.seconds * VIDEO.fps);

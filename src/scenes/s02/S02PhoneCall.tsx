@@ -15,10 +15,10 @@ import {PHONE, PhoneBody} from '../shared/Phone';
 const scene = getScene('s02');
 const vo = (word: string, n = 0) => scene.voAt + wordTime('s02', word, n);
 
-// Scene 2 — the weekly voice session. The monitoring-gap box has become the phone: a notification
-// arrives ("Your weekly voice session · 3 min"), the app opens and walks through three short activities
+// Scene 2 — the daily voice session. The monitoring-gap box has become the phone: a notification
+// arrives ("Your daily voice session · 3 min"), the app opens and walks through three short activities
 // as the narrator names them (hold an "aah", read a line, chat a little), then the session completes and
-// the streak goes up: a small weekly habit for your voice. The live voice signal runs on the panel beside it and the
+// the streak goes up: a small daily habit for your voice. The live voice signal runs on the panel beside it and the
 // camera finally pushes into that waveform, where scene 3 starts.
 const T = {
   uiIn: 0.05,
@@ -28,7 +28,7 @@ const T = {
   read: vo('read'),
   chat: vo('chat'),
   done: vo('small') - 0.1,
-  week: vo('week'),
+  day: vo('day'),
   minutes: vo('three-minute'),
   habit: vo('small') - 0.05,
   forVoice: vo('for'),
@@ -182,7 +182,7 @@ const LockScreen: React.FC<{t: number; open: number}> = ({t, open}) => {
             <span>VOXWAVE</span>
             <span style={{fontWeight: 500}}>now</span>
           </div>
-          <div style={{fontSize: 18, fontWeight: 700, marginTop: 2}}>Your weekly voice session</div>
+          <div style={{fontSize: 18, fontWeight: 700, marginTop: 2}}>Your daily voice session</div>
           <div style={{fontSize: 15, opacity: 0.75}}>3 minutes · 3 short activities</div>
         </div>
       </div>
@@ -190,7 +190,7 @@ const LockScreen: React.FC<{t: number; open: number}> = ({t, open}) => {
   );
 };
 
-// The app: weekly session with three activities that light up and tick off as they are named.
+// The app: today's session with three activities that light up and tick off as they are named.
 const SessionScreen: React.FC<{t: number; open: number}> = ({t, open}) => {
   const {fps} = useVideoConfig();
   const done = spring({frame: (t - T.done) * fps, fps, config: {damping: 11, stiffness: 200, mass: 0.7}});
@@ -210,12 +210,12 @@ const SessionScreen: React.FC<{t: number; open: number}> = ({t, open}) => {
         background: `linear-gradient(180deg, ${COLORS.navy} 0%, #06324A 70%, ${COLORS.navyDeep} 100%)`,
       }}
     >
-      {/* Header: app, week and streak */}
+      {/* Header: app, day and streak */}
       <div style={{position: 'absolute', top: 74, left: 26, right: 26, display: 'flex', alignItems: 'center', gap: 12}}>
         <AppMark size={44} />
         <div style={{flex: 1, minWidth: 0}}>
-          <div style={{fontFamily: FONTS.display, fontSize: 20, fontWeight: 700, whiteSpace: 'nowrap'}}>Weekly session</div>
-          <div style={{fontSize: 14, color: COLORS.tealBright, whiteSpace: 'nowrap'}}>Week 12 · about 3 min</div>
+          <div style={{fontFamily: FONTS.display, fontSize: 20, fontWeight: 700, whiteSpace: 'nowrap'}}>Today’s session</div>
+          <div style={{fontSize: 14, color: COLORS.tealBright, whiteSpace: 'nowrap'}}>Day 47 · about 3 min</div>
         </div>
         <Streak done={done} />
       </div>
@@ -254,7 +254,7 @@ const SessionScreen: React.FC<{t: number; open: number}> = ({t, open}) => {
           </svg>
           <div>
             <div style={{fontFamily: FONTS.display, fontSize: 20, fontWeight: 700}}>Session complete</div>
-            <div style={{fontSize: 14, opacity: 0.9}}>See you next week</div>
+            <div style={{fontSize: 14, opacity: 0.9}}>See you tomorrow</div>
           </div>
         </div>
       )}
@@ -358,12 +358,12 @@ const ActivityIcon: React.FC<{kind: 'hold' | 'read' | 'chat'; color: string}> = 
   </svg>
 );
 
-// Kinetic label under the waveform panel: "Once a week. 3 minutes." slam in word by word, then the pill
-// flips over to "A weekly habit, for your voice." with a coral marker on "for your voice."
+// Kinetic label under the waveform panel: "Every day. 3 minutes." slam in word by word, then the pill
+// flips over to "A daily habit, for your voice." with a coral marker on "for your voice."
 const SessionLabel: React.FC<{t: number; fade: number}> = ({t, fade}) => {
   const {fps} = useVideoConfig();
   const sp = (at: number) => spring({frame: (t - at) * fps, fps, config: {damping: 12, stiffness: 220, mass: 0.6}});
-  const box = spring({frame: (t - T.week + 0.08) * fps, fps, config: {damping: 13, stiffness: 160}});
+  const box = spring({frame: (t - T.day + 0.08) * fps, fps, config: {damping: 13, stiffness: 160}});
   const flip = interpolate(t, [T.habit - 0.12, T.habit + 0.16], [0, 1], {...clamp, easing: Easing.inOut(Easing.cubic)});
   const back = flip >= 0.5;
   const angle = back ? (1 - flip) * -180 : flip * 180;
@@ -392,12 +392,12 @@ const SessionLabel: React.FC<{t: number; fade: number}> = ({t, fade}) => {
     >
       {!back ? (
         <>
-          <span style={word(sp(T.week))}>Once a week.</span>
+          <span style={word(sp(T.day))}>Every day.</span>
           <span style={word(sp(T.minutes))}>3 minutes.</span>
         </>
       ) : (
         <>
-          <span>A weekly habit,</span>
+          <span>A daily habit,</span>
           <span style={{position: 'relative', display: 'inline-block', padding: '0 8px'}}>
             <span style={{position: 'absolute', left: 0, top: 6, bottom: 2, width: `${hl * 100}%`, background: COLORS.coral, borderRadius: 10}} />
             <span style={{position: 'relative'}}>for your voice.</span>

@@ -361,7 +361,7 @@ const PatientBoard: React.FC<{t: number}> = ({t}) => {
           <svg width={24} height={24} viewBox="0 0 24 24" fill="none" stroke={COLORS.card} strokeWidth={3} strokeLinecap="round" strokeLinejoin="round">
             <path d="M4 12.5 L10 18 L20 6" />
           </svg>
-          <span style={{fontFamily: FONTS.ui, fontWeight: 800, fontSize: 20, letterSpacing: 3}}>DEVICE INCLUDED</span>
+          <span style={{fontFamily: FONTS.ui, fontWeight: 800, fontSize: 20, letterSpacing: 3}}>DEVICE INCLUDED IF NEEDED</span>
         </div>
       </div>
     </div>
