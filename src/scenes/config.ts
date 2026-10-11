@@ -215,10 +215,10 @@ SCENES.push({
   id: 'close',
   slot: '',
   title: 'Close',
-  seconds: 10.1,
+  seconds: 11.3,
   voAt: 0.3,
   onScreen: ['Visit', 'VoxWave', 'What if the answer was there all along?', 'Creative Shock 2026 · FdiProtocol'],
-  visual: 'La onda gris y casi plana (con dos marcas VISIT) tiembla con la voz pero nadie la escucha. En "VoxWave makes sure someone hears it" un punto coral la recorre y la enciende en una onda de voz viva, que se recoge en el logo (el mismo gesto de tres trazos de la apertura). La pregunta "What if the answer was there all along?" y "Creative Shock 2026 · FdiProtocol". Fundido a negro.',
+  visual: 'Como la presentación del logo: la onda gris (marcas VISIT) tiembla con la voz sin que nadie la escuche. En "VoxWave makes sure someone hears it" un punto coral la enciende, se apagan las luces y se abre en las tres ondas brillantes con sus estelas. En la pausa se recogen en el logo, el papel se enciende desde él y sube el wordmark. La pregunta "What if the answer was there all along?", "Creative Shock 2026 · FdiProtocol" y fundido a negro.',
 });
 
 SCENES.push({

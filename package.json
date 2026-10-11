@@ -10,7 +10,8 @@
     "tts": "node scripts/tts.mjs",
     "typecheck": "tsc --noEmit",
     "sfx": "node scripts/sfx.mjs",
-    "music": "node scripts/music.mjs"
+    "music": "node scripts/music.mjs",
+    "opening-mix": "node scripts/opening-mix.mjs"
   },
   "dependencies": {
     "@remotion/cli": "4.0.534",

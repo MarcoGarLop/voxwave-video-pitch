@@ -2,7 +2,7 @@ import React, {useMemo} from 'react';
 import {interpolate, Sequence, staticFile} from 'remotion';
 import {Audio} from '@remotion/media';
 import {VIDEO} from './brand/tokens';
-import voTimings from './data/vo-timings.json';
+import {voWords} from './data/vo';
 import {BLOCK_SCENES, CLOSE_SCENES, FINANCE_SCENES, sceneFrames} from './scenes/config';
 import {CLOSE_REVEAL} from './scenes/close/CloseScene';
 
@@ -24,8 +24,7 @@ const useDuck = (frames: number) =>
     const speaking = new Uint8Array(frames);
     let offset = 0;
     for (const s of SCENES) {
-      const entry = (voTimings as Record<string, {words: {start: number; end: number}[]}>)[s.id];
-      for (const w of entry?.words ?? []) {
+      for (const w of voWords(s.id)) {
         const a = Math.max(0, Math.floor((offset + (s.voAt + w.start - 0.1) * FPS)));
         const b = Math.min(frames - 1, Math.ceil(offset + (s.voAt + w.end + 0.25) * FPS));
         for (let f = a; f <= b; f++) speaking[f] = 1;

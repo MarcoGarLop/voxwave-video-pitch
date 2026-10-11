@@ -2,7 +2,7 @@ import React from 'react';
 import {AnimaticCard} from '../animatic/AnimaticCard';
 import {getScene, type SceneId} from './config';
 import {SpeechContext} from '../components/Sfx';
-import voTimings from '../data/vo-timings.json';
+import {voWords} from '../data/vo';
 import {S01WaveToLogo} from './s01/S01WaveToLogo';
 import {S02PhoneCall} from './s02/S02PhoneCall';
 import {S03Biomarkers} from './s03/S03Biomarkers';
@@ -55,11 +55,9 @@ const BUILT: Partial<Record<SceneId, React.FC>> = {
 // When the narrator is speaking in a scene (seconds from the scene start). Words closer than 0.4 s are one
 // stretch of speech. Sound effects read this to make way for the voice.
 const speechOf = (id: SceneId): [number, number][] => {
-  const entry = (voTimings as Record<string, {words: {start: number; end: number}[]}>)[id];
-  if (!entry) return [];
   const at = getScene(id).voAt;
   const out: [number, number][] = [];
-  for (const w of entry.words) {
+  for (const w of voWords(id)) {
     const last = out[out.length - 1];
     if (last && at + w.start - last[1] < 0.4) last[1] = at + w.end;
     else out.push([at + w.start, at + w.end]);

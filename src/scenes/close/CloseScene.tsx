@@ -1,5 +1,5 @@
 import React, {useMemo} from 'react';
-import {AbsoluteFill, Easing, interpolate, spring, useCurrentFrame, useVideoConfig} from 'remotion';
+import {AbsoluteFill, Easing, interpolate, interpolateColors, spring, useCurrentFrame, useVideoConfig} from 'remotion';
 import {noise2D} from '@remotion/noise';
 import {COLORS, FONTS} from '../../brand/tokens';
 import {LOGO} from '../../brand/logo';
@@ -11,24 +11,28 @@ import {wordTime} from '../../data/vo';
 import {resampleSmooth, toPolyline, type Pt} from '../../lib/curves';
 import {useVoAmplitude} from '../../lib/useVoAmplitude';
 import {getScene} from '../config';
+import {Particles} from '../s01/S01WaveToLogo';
 import {CLOSE_WAVE} from '../shared/handoffs';
 
 const scene = getScene('close');
 const vo = (word: string, n = 0) => scene.voAt + wordTime('close', word, n);
 
-// Scene 19 — the close. "Between visits, a voice still has something to say": the grey, almost flat line
-// left by the MVP scene trembles with the narrator but nobody hears it. "VoxWave makes sure someone hears
-// it": a coral point runs along it and lights it up into a living voice wave, which slowly locks into the
-// logo (same three-stroke morph as the opening, with a soft crossfade into the filled logo). Then the
-// question from the opening comes back over it, "What if the answer was there all along?", the event
-// line, and a slow fade out.
+// Scene 19 — the close, built like the logo reveal at the start of our block (s01).
+// "Between visits, a voice still has something to say": the grey, almost flat line left by the MVP scene
+// trembles with the narrator but nobody hears it. "VoxWave makes sure someone hears it": a coral point runs
+// along it and lights it up; the lights go down and the line opens into the three glowing brand waves,
+// with their echoes, building up. In the pause that follows (see VO_GAPS) they lock into the logo, the paper
+// lights up from it and the wordmark rises. Then the question from the opening comes back over it, "What if
+// the answer was there all along?", the event line, and a slow fade out.
 const T = {
   visits: vo('visits') - 0.15,
   ignite: vo('voxwave') - 0.15,
-  igniteEnd: vo('someone'),
-  morphStart: vo('someone'),
-  reveal: vo('someone') + 0.95,
-  wordmark: vo('someone') + 1.05,
+  igniteEnd: vo('sure'),
+  darkFrom: vo('sure') - 0.1,
+  darkTo: vo('someone') + 0.2,
+  morphStart: vo('it') + 0.2,
+  reveal: vo('it') + 1.0,
+  wordmark: vo('it') + 1.35,
   footer: vo('along') + 0.6,
   fade: scene.seconds - 0.55,
 };
@@ -42,13 +46,15 @@ const W = CLOSE_WAVE;
 const LOCK = {y: 430, width: 700};
 const K = LOCK.width / 1254;
 const LOCK_CENTER = {x: 634, y: 637.5};
+const SYMBOL = {x: 960, y: LOCK.y + (560 - LOCK_CENTER.y) * K};
 const clamp = {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'} as const;
 const ease = Easing.bezier(0.75, 0, 0.2, 1);
 
+// On paper the strokes use the brand colours; with the lights down they glow like in the opening.
 const STROKES = [
-  {key: 'navy', color: COLORS.navy, offset: -6, phase: 0},
-  {key: 'coral', color: COLORS.coral, offset: 0, phase: 2.1},
-  {key: 'teal', color: COLORS.teal, offset: 6, phase: 4.2},
+  {key: 'navy', paper: COLORS.navy, dark: COLORS.white, offset: -6, phase: 0},
+  {key: 'coral', paper: COLORS.coral, dark: COLORS.coral, offset: 0, phase: 2.1},
+  {key: 'teal', paper: COLORS.teal, dark: COLORS.tealBright, offset: 6, phase: 4.2},
 ] as const;
 
 const LETTERS = [
@@ -63,10 +69,10 @@ const baseY = (u: number, amp: number, phase: number) => {
   return yAt(i0) + (yAt(i0 + 1) - yAt(i0)) * (u - i0);
 };
 
-// Living voice wave on top of the line (as in the opening): two travelling sines with noisy "syllables".
-const voiceY = (x: number, t: number, i: number) => {
+// Living voice wave (as in the opening): two travelling sines with noisy "syllables".
+const voiceY = (x: number, t: number, i: number, shift = 0) => {
   const syllable = 0.55 + 0.45 * noise2D(`cl${i}`, x * 0.0025, t * 1.6);
-  const ph = STROKES[i].phase;
+  const ph = STROKES[i].phase + shift;
   return syllable * (0.62 * Math.sin((2 * Math.PI * x) / (250 + 40 * i) + t * (2.4 + 0.6 * i) + ph) + 0.38 * Math.sin((2 * Math.PI * x) / (105 + 18 * i) - t * 3.3 + ph * 2));
 };
 
@@ -88,41 +94,58 @@ export const CloseScene: React.FC = () => {
   const lit = interpolate(t, [T.ignite, T.igniteEnd], [0, 1], clamp);
   const greyAmp = W.amp + voice * 9 * (1 - lit);
   const phase = t * 0.5;
-  // The coral point runs left to right; behind it the wave lights up and swells.
+  // The coral point runs left to right; behind it the wave lights up. Then the build-up, as in the opening.
   const dotX = W.x0 + (W.x1 - W.x0) * Easing.inOut(Easing.sin)(lit);
-  const swell = interpolate(t, [T.ignite, T.morphStart], [0, 150], {...clamp, easing: Easing.in(Easing.quad)});
-  const morphOf = (i: number) => ease(interpolate(t, [T.morphStart + i * 0.08, T.reveal - 0.1 - (2 - i) * 0.03], [0, 1], clamp));
-  const split = interpolate(t, [T.morphStart - 0.1, T.morphStart + 0.2], [0, 1], clamp);
-  const strokesOn = interpolate(t, [T.reveal - 0.15, T.reveal + 0.3], [1, 0], {...clamp, easing: Easing.inOut(Easing.quad)});
+  const amp = interpolate(t, [T.ignite, T.igniteEnd, T.morphStart], [0, 60, 190], {...clamp, easing: Easing.in(Easing.quad)});
+  const dark = interpolate(t, [T.darkFrom, T.darkTo], [0, 1], {...clamp, easing: Easing.inOut(Easing.cubic)});
+  const morphOf = (i: number) => ease(interpolate(t, [T.morphStart + i * 0.07, T.reveal - (2 - i) * 0.02], [0, 1], clamp));
+  const split = interpolate(t, [T.darkFrom, T.darkTo], [0, 1], clamp);
+  const linesOpacity = interpolate(t, [T.reveal - 0.05, T.reveal + 0.1], [1, 0], clamp);
 
-  const wave = (i: number): Pt[] => {
+  const wave = (i: number, shift = 0, gain = 1): Pt[] => {
     const pts: Pt[] = [];
+    const m = morphOf(i);
     for (let j = 0; j < N; j++) {
       const u = (j / (N - 1)) * 60;
       const x = W.x0 + (j / (N - 1)) * (W.x1 - W.x0);
       const behind = interpolate(dotX - x, [0, 260], [0, 1], clamp);
       const env = Math.pow(Math.sin(Math.PI * Math.min(1, Math.max(0, x / 1920))), 2);
-      let y = baseY(u, greyAmp, phase) + STROKES[i].offset * split + swell * env * behind * voiceY(x, t, i);
-      const m = morphOf(i);
+      let y = baseY(u, greyAmp, phase) + STROKES[i].offset * split + amp * gain * env * behind * voiceY(x, t, i, shift);
       if (m > 0) y = y + (targets[i][j][1] - y) * m;
       pts.push([m > 0 ? x + (targets[i][j][0] - x) * m : x, y]);
     }
     return pts;
   };
-  const strokeW = (i: number) => interpolate(Math.pow(morphOf(i), 3), [0, 1], [W.stroke, LOGO_CENTERLINES[STROKES[i].key].width * K]);
+  // Lines stay thin while travelling and only fatten at the very end of the morph.
+  const strokeW = (i: number) => interpolate(Math.pow(morphOf(i), 3), [0, 1], [W.stroke + (amp / 70) * dark, LOGO_CENTERLINES[STROKES[i].key].width * K]);
+  const colour = (i: number) => interpolateColors(dark, [0, 1], [STROKES[i].paper, STROKES[i].dark]);
 
-  // Logo, wordmark, tagline, event line.
-  // Soft handover from the strokes to the filled logo (no hard swap).
-  const logoIn = interpolate(t, [T.reveal - 0.2, T.reveal + 0.2], [0, 1], {...clamp, easing: Easing.inOut(Easing.quad)});
-  const kick = interpolate(t, [T.reveal - 0.2, T.reveal + 0.6], [0.985, 1], {...clamp, easing: Easing.out(Easing.cubic)});
+  // Lights on: the paper wipes out from the symbol on the reveal; before that, a faint warm glow.
+  const paperR = interpolate(t, [T.reveal - 0.04, T.reveal + 0.4], [0, 1250], {...clamp, easing: Easing.out(Easing.cubic)});
+  const preGlow = interpolate(t, [T.darkTo, T.reveal], [0, 0.16], clamp) * dark;
+  const logoIn = interpolate(t, [T.reveal - 0.08, T.reveal + 0.02], [0, 1], clamp);
+  const kick = interpolate(t, [T.reveal, T.reveal + 0.07, T.reveal + 0.55], [1, 1.07, 1], {...clamp, easing: Easing.out(Easing.cubic)});
   const visits = interpolate(t, [T.visits, T.visits + 0.35], [0, 1], clamp) * (1 - interpolate(t, [T.ignite, T.ignite + 0.35], [0, 1], clamp));
   const fadeOut = interpolate(t, [T.fade, scene.seconds - 1 / fps], [0, 1], {...clamp, easing: Easing.in(Easing.quad)});
   const dotR = 12 * interpolate(t, [T.ignite - 0.1, T.ignite + 0.1, T.igniteEnd - 0.05, T.igniteEnd + 0.15], [0, 1, 1, 0], clamp);
   const dotY = baseY(((dotX - W.x0) / (W.x1 - W.x0)) * 60, greyAmp, phase);
+  const particles = interpolate(t, [T.reveal, T.reveal + 0.5], [0, 1], clamp) * (1 - fadeOut);
 
   return (
     <AbsoluteFill>
       <BrandBackground />
+      {/* Lights down, then the paper lights up again from the logo */}
+      {dark > 0 && <AbsoluteFill style={{backgroundColor: COLORS.black, opacity: dark}} />}
+      {preGlow > 0 && paperR < 1250 && (
+        <AbsoluteFill style={{background: `radial-gradient(circle at 50% ${(SYMBOL.y / 1080) * 100}%, ${COLORS.paper} 0%, transparent 55%)`, opacity: preGlow}} />
+      )}
+      {paperR > 0 && (
+        <AbsoluteFill style={{clipPath: `circle(${paperR}px at ${SYMBOL.x}px ${SYMBOL.y}px)`}}>
+          <BrandBackground />
+        </AbsoluteFill>
+      )}
+
+      <Particles t={t} visibility={particles} />
 
       <svg width={1920} height={1080} style={{position: 'absolute', inset: 0, overflow: 'visible'}}>
         <defs>
@@ -132,6 +155,13 @@ export const CloseScene: React.FC = () => {
           <clipPath id="close-unlit">
             <rect x={dotX} y={-200} width={2200} height={1480} />
           </clipPath>
+          <filter id="close-glow" x="-20%" y="-50%" width="140%" height="200%">
+            <feGaussianBlur stdDeviation={Math.max(0.01, (4 + amp / 25) * dark)} result="b" />
+            <feMerge>
+              <feMergeNode in="b" />
+              <feMergeNode in="SourceGraphic" />
+            </feMerge>
+          </filter>
         </defs>
 
         {/* Visit markers at both ends: "between visits" */}
@@ -145,23 +175,39 @@ export const CloseScene: React.FC = () => {
             </g>
           ))}
 
-        {strokesOn > 0 && (
-          <g opacity={strokesOn}>
-            {/* Unlit part (grey) and lit part (coral, then the three brand strokes) */}
+        {linesOpacity > 0 && (
+          <g opacity={linesOpacity}>
+            {/* Unlit part (grey) and lit part (coral, then the three glowing brand strokes) */}
             {lit < 1 && <polyline points={toPolyline(wave(1))} fill="none" stroke={W.color} strokeWidth={W.stroke} strokeLinecap="round" strokeLinejoin="round" clipPath="url(#close-unlit)" />}
             <g clipPath={lit < 1 ? 'url(#close-lit)' : undefined}>
-              {STROKES.map((s, i) => (
-                <polyline
-                  key={s.key}
-                  points={toPolyline(wave(i))}
-                  fill="none"
-                  stroke={s.color}
-                  strokeWidth={strokeW(i)}
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  opacity={s.key === 'coral' ? 1 : split}
-                />
-              ))}
+              {/* Echoes, while the lights are down */}
+              {dark > 0.01 &&
+                STROKES.map((s, i) =>
+                  [1.2, 0.6].map((shift, e) => (
+                    <polyline
+                      key={`${s.key}-echo-${e}`}
+                      points={toPolyline(wave(i, shift, 0.85 - e * 0.15))}
+                      fill="none"
+                      stroke={colour(i)}
+                      strokeWidth={1.5}
+                      opacity={(e === 0 ? 0.22 : 0.4) * Math.pow(1 - morphOf(i), 2) * dark}
+                    />
+                  )),
+                )}
+              <g filter={dark > 0.01 ? 'url(#close-glow)' : undefined}>
+                {STROKES.map((s, i) => (
+                  <polyline
+                    key={s.key}
+                    points={toPolyline(wave(i))}
+                    fill="none"
+                    stroke={colour(i)}
+                    strokeWidth={strokeW(i)}
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    opacity={s.key === 'coral' ? 1 : split}
+                  />
+                ))}
+              </g>
             </g>
           </g>
         )}
@@ -174,7 +220,7 @@ export const CloseScene: React.FC = () => {
 
         {/* The real logo takes over on the reveal */}
         {logoIn > 0 && (
-          <g opacity={logoIn} transform={`translate(960 ${LOCK.y}) scale(${K * kick}) translate(${-LOCK_CENTER.x} ${-LOCK_CENTER.y})`}>
+          <g opacity={logoIn} transform={`translate(${SYMBOL.x} ${SYMBOL.y}) scale(${kick}) translate(${-SYMBOL.x} ${-SYMBOL.y}) translate(960 ${LOCK.y}) scale(${K}) translate(${-LOCK_CENTER.x} ${-LOCK_CENTER.y})`}>
             <path d={LOGO.symbol.navy.join('')} fill={COLORS.navy} />
             <path d={LOGO.symbol.teal.join('')} fill={COLORS.teal} />
             <path d={LOGO.symbol.coral.join('')} fill={COLORS.coral} />
@@ -198,7 +244,9 @@ export const CloseScene: React.FC = () => {
 
       <VoiceOver scene={scene} />
       <Sfx name="whoosh-short" at={T.ignite} volume={0.3} />
-      <Sfx name="shimmer" at={T.reveal - 0.2} volume={0.25} />
+      <Sfx name="riser" at={T.reveal - 3.4} volume={0.45} />
+      <Sfx name="impact" at={T.reveal - 0.02} volume={0.4} />
+      <Sfx name="shimmer" at={T.wordmark + 0.05} volume={0.3} />
     </AbsoluteFill>
   );
 };

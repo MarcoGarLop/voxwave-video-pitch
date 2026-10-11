@@ -1,6 +1,7 @@
 import React from 'react';
 import {AbsoluteFill, interpolate, Sequence, staticFile} from 'remotion';
 import {Audio, Video} from '@remotion/media';
+import {OpeningWave} from './OpeningWave';
 
 // Cinematic opening (v08) by the team, imported unchanged from jjpaz/VoxWave, branch
 // video/opening-v08-handoff (commit 9d11694). Media are byte-identical to the handoff manifest:
@@ -8,6 +9,12 @@ import {Audio, Video} from '@remotion/media';
 //   opening-v08-mix.wav  video/renders/v08/mix.wav (48 kHz / 24-bit PCM, the lossless master mix)
 // The picture is played muted and the lossless mix is used as its sound. Do not re-edit the files.
 //
+// Sound: the mother's six lines were re-recorded (Recursos/1..6.mpeg). scripts/opening-mix.mjs rebuilds the
+// mix from the team's stems with the same chain, keeping the daughter's lines as they were, and writes
+// opening-v08-mix-new-mother.wav (the original mix.wav is kept for reference). The voice wave on the text
+// cards follows the new dialogue too (OpeningWave).
+const MIX = 'opening/opening-v08-mix-new-mother.wav';
+
 // Edits made here, at playback:
 // - 3 s are taken out of the "What if the answer was always there?" card (55.0 → 58.0 s of the source).
 //   The card is completely still from 54.5 to 58.9 s, so the jump is invisible; the quiet pad underneath
@@ -39,6 +46,7 @@ export const OpeningPicture: React.FC = () => (
     <Sequence from={SKIP.from} layout="none">
       <Video src={staticFile('opening/opening-v08.mp4')} muted trimBefore={SKIP.from + SKIP.frames} style={{width: '100%', height: '100%'}} />
     </Sequence>
+    <OpeningWave toSource={(f) => (f < SKIP.from ? f : f + SKIP.frames) / FPS} />
   </AbsoluteFill>
 );
 
@@ -49,11 +57,11 @@ export const OpeningSound: React.FC = () => {
   return (
     <>
       <Sequence durationInFrames={SKIP.from + XFADE} name="Opening sound (v08 mix) · part 1" layout="none">
-        <Audio src={staticFile('opening/opening-v08-mix.wav')} volume={(f) => gain * interpolate(f, [SKIP.from, SKIP.from + XFADE], [1, 0], clamp)} />
+        <Audio src={staticFile(MIX)} volume={(f) => gain * interpolate(f, [SKIP.from, SKIP.from + XFADE], [1, 0], clamp)} />
       </Sequence>
       <Sequence from={SKIP.from - XFADE} durationInFrames={end - (SKIP.from - XFADE)} name="Opening sound (v08 mix) · part 2" layout="none">
         <Audio
-          src={staticFile('opening/opening-v08-mix.wav')}
+          src={staticFile(MIX)}
           trimBefore={SKIP.from + SKIP.frames - XFADE}
           volume={(f) => {
             const at = SKIP.from - XFADE + f;

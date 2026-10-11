@@ -288,7 +288,7 @@ export const S01WaveToLogo: React.FC = () => {
 };
 
 // Soft drifting specks that appear as the background lights up.
-const Particles: React.FC<{t: number; visibility: number}> = ({t, visibility}) => {
+export const Particles: React.FC<{t: number; visibility: number}> = ({t, visibility}) => {
   return (
     <svg width={1920} height={1080} style={{position: 'absolute'}}>
       {new Array(46).fill(0).map((_, i) => {
